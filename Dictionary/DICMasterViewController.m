@@ -37,25 +37,31 @@
     self.detailViewController = (DICDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
     // $Search
-    // Set up some sample data
-    NSArray *ar = [[NSArray alloc]initWithObjects: @{@"name": @"matt"}, @{@"name": @"max"}, @{@"name": @"meg"} , nil];
+    // Get data from the plist file
+    DICLoadPlist *loader = [[DICLoadPlist alloc]init];
+    NSDictionary *dict = [loader loadPlistAtFilename:@"test.plist"];
+    NSLog(@"dict %@", dict);
+    DICDictionaryToArray *dta = [[DICDictionaryToArray alloc]init];
     
+    // Set up the array
+    NSArray *ar = [dta convertDictionaryToArray:dict];
+    NSLog(@"array %@", ar);
     [self setMasterContent:[NSArray arrayWithArray:ar]];
     
     self.searchResults = [NSMutableArray arrayWithCapacity:self.masterContent.count];
     
     
+   /*
     
-    
-//    DICRequestData *rd = [[DICRequestData alloc]init];
-//    // - (void)requestDataForURL:(NSURL *)url completionHandler:(void (^)(NSURLResponse *, NSData *, NSError *))block
-//    [rd requestDataForURL:[NSURL URLWithString:@"http://glosbe.com/gapi/translate?from=eng&dest=eng&format=json&phrase=car"]
-//        completionHandler:^void (NSURLResponse *res, NSData *data, NSError *err) {
-//            NSLog(@"WITHIN %@", data);
-//            NSString *str = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-//            NSLog(@"%@", str);
-//        }];
-
+    DICRequestData *rd = [[DICRequestData alloc]init];
+    // - (void)requestDataForURL:(NSURL *)url completionHandler:(void (^)(NSURLResponse *, NSData *, NSError *))block
+    [rd requestDataForURL:[NSURL URLWithString:@"http://glosbe.com/gapi/translate?from=eng&dest=eng&format=json&phrase=car"]
+        completionHandler:^void (NSURLResponse *res, NSData *data, NSError *err) {
+            NSLog(@"WITHIN %@", data);
+            NSString *str = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+            NSLog(@"%@", str);
+        }];
+*/
 }
 
 - (void)didReceiveMemoryWarning
@@ -98,7 +104,7 @@
 {
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    NSObject *item;
+    NSString *item;
     
     // If requested table view is for search, return the item from filtered search list
     // Else return the master list item
@@ -107,9 +113,10 @@
     } else {
         item = [self.masterContent objectAtIndex:indexPath.row];
     }
-
-    cell.detailTextLabel.text = @"this is a detail label";
-    cell.textLabel.text = [item valueForKey:@"name"];
+    // Possible point for performance improvements
+//    NSLog(@"item is %@", item.allKeys[0]);
+//    cell.detailTextLabel.text = item.allValues[0];
+    cell.textLabel.text = item;
     return cell;
 }
 
@@ -204,16 +211,27 @@
         
     }
     
+    NSLog(@"length of input is %lu", (unsigned long)productName.length);
+    //Return if length is less than three to improve performace
+    if (productName.length < 3) {
+        return;
+    }
     // There is search input
     // Clear the search array
     [self.searchResults removeAllObjects];
     
+    // Possible point for performance improvements
+/*    NSLog(@"item is %@", item.allKeys[0]);
+    cell.detailTextLabel.text = item.allValues[0];
+    cell.textLabel.text = item.allKeys[0];
+ */
     // Search the master list for matching items
     // When they match, add them to the search results array
-    for (NSObject *item in self.masterContent) {
+    for (NSString *item in self.masterContent) {
+//        NSLog(@"item is %lu", (unsigned long)[item.allKeys[0] length]);
         NSUInteger searchOptions = NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch;
-        NSRange nameRange = NSMakeRange(0, [[item valueForKey:@"name"]length]);
-        NSRange foundRange = [[item valueForKey:@"name"]rangeOfString:productName options:searchOptions range:nameRange];
+        NSRange nameRange = NSMakeRange(0, [item length]);
+        NSRange foundRange = [item rangeOfString:productName options:searchOptions range:nameRange];
         
         //Add item to the search results
         if (foundRange.length > 0) {

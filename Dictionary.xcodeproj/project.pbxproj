@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0ECADB8C183F1FD700EB2202 /* DICDictionaryToArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECADB8B183F1FD700EB2202 /* DICDictionaryToArray.m */; };
+		0ECADB8D183F1FD700EB2202 /* DICDictionaryToArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECADB8B183F1FD700EB2202 /* DICDictionaryToArray.m */; };
+		0ECADB95184014E500EB2202 /* wordsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0ECADB94184014E500EB2202 /* wordsList.plist */; };
+		0ECADB96184014E500EB2202 /* wordsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0ECADB94184014E500EB2202 /* wordsList.plist */; };
 		0EF1ADE1183C4F2100ACDEBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF1ADE0183C4F2100ACDEBF /* Foundation.framework */; };
 		0EF1ADE3183C4F2100ACDEBF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF1ADE2183C4F2100ACDEBF /* CoreGraphics.framework */; };
 		0EF1ADE5183C4F2100ACDEBF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF1ADE4183C4F2100ACDEBF /* UIKit.framework */; };
@@ -27,6 +31,8 @@
 		0EF1AE1E183C50CD00ACDEBF /* DICParseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF1AE1C183C50CD00ACDEBF /* DICParseResponse.m */; };
 		0EF1AE21183C513300ACDEBF /* DICRequestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF1AE20183C513300ACDEBF /* DICRequestData.m */; };
 		0EF1AE22183C513300ACDEBF /* DICRequestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF1AE20183C513300ACDEBF /* DICRequestData.m */; };
+		0EF1AE2B183EF78B00ACDEBF /* DICLoadPlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF1AE2A183EF78B00ACDEBF /* DICLoadPlist.m */; };
+		0EF1AE2C183EF78B00ACDEBF /* DICLoadPlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF1AE2A183EF78B00ACDEBF /* DICLoadPlist.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0ECADB8A183F1FD700EB2202 /* DICDictionaryToArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DICDictionaryToArray.h; sourceTree = "<group>"; };
+		0ECADB8B183F1FD700EB2202 /* DICDictionaryToArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DICDictionaryToArray.m; sourceTree = "<group>"; };
+		0ECADB94184014E500EB2202 /* wordsList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = wordsList.plist; path = Dictionary/wordsList.plist; sourceTree = "<group>"; };
 		0EF1ADDD183C4F2100ACDEBF /* Dictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EF1ADE0183C4F2100ACDEBF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0EF1ADE2183C4F2100ACDEBF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -66,6 +75,8 @@
 		0EF1AE1C183C50CD00ACDEBF /* DICParseResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DICParseResponse.m; path = Dictionary/DICParseResponse.m; sourceTree = SOURCE_ROOT; };
 		0EF1AE1F183C513300ACDEBF /* DICRequestData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DICRequestData.h; sourceTree = "<group>"; };
 		0EF1AE20183C513300ACDEBF /* DICRequestData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DICRequestData.m; sourceTree = "<group>"; };
+		0EF1AE29183EF78B00ACDEBF /* DICLoadPlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DICLoadPlist.h; sourceTree = "<group>"; };
+		0EF1AE2A183EF78B00ACDEBF /* DICLoadPlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DICLoadPlist.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +110,7 @@
 				0EF1AE0B183C4F2100ACDEBF /* DictionaryTests */,
 				0EF1ADDF183C4F2100ACDEBF /* Frameworks */,
 				0EF1ADDE183C4F2100ACDEBF /* Products */,
+				0ECADB94184014E500EB2202 /* wordsList.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,12 +143,16 @@
 				0EF1ADF5183C4F2100ACDEBF /* Main_iPad.storyboard */,
 				0EF1ADF8183C4F2100ACDEBF /* DICMasterViewController.h */,
 				0EF1ADF9183C4F2100ACDEBF /* DICMasterViewController.m */,
+				0ECADB8A183F1FD700EB2202 /* DICDictionaryToArray.h */,
+				0ECADB8B183F1FD700EB2202 /* DICDictionaryToArray.m */,
 				0EF1ADFB183C4F2100ACDEBF /* DICDetailViewController.h */,
 				0EF1ADFC183C4F2100ACDEBF /* DICDetailViewController.m */,
 				0EF1AE1B183C50CD00ACDEBF /* DICParseResponse.h */,
 				0EF1AE1C183C50CD00ACDEBF /* DICParseResponse.m */,
 				0EF1AE1F183C513300ACDEBF /* DICRequestData.h */,
 				0EF1AE20183C513300ACDEBF /* DICRequestData.m */,
+				0EF1AE29183EF78B00ACDEBF /* DICLoadPlist.h */,
+				0EF1AE2A183EF78B00ACDEBF /* DICLoadPlist.m */,
 				0EF1ADFE183C4F2100ACDEBF /* Images.xcassets */,
 				0EF1ADE7183C4F2100ACDEBF /* Supporting Files */,
 			);
@@ -220,6 +236,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Matthew Palmer";
 				TargetAttributes = {
+					0EF1ADDC183C4F2100ACDEBF = {
+						DevelopmentTeam = Z4JV2M65MH;
+					};
 					0EF1AE03183C4F2100ACDEBF = {
 						TestTargetID = 0EF1ADDC183C4F2100ACDEBF;
 					};
@@ -252,6 +271,7 @@
 				0EF1ADF7183C4F2100ACDEBF /* Main_iPad.storyboard in Resources */,
 				0EF1ADFF183C4F2100ACDEBF /* Images.xcassets in Resources */,
 				0EF1ADF4183C4F2100ACDEBF /* Main_iPhone.storyboard in Resources */,
+				0ECADB95184014E500EB2202 /* wordsList.plist in Resources */,
 				0EF1ADEB183C4F2100ACDEBF /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +280,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ECADB96184014E500EB2202 /* wordsList.plist in Resources */,
 				0EF1AE10183C4F2100ACDEBF /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +293,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EF1ADED183C4F2100ACDEBF /* main.m in Sources */,
+				0ECADB8C183F1FD700EB2202 /* DICDictionaryToArray.m in Sources */,
+				0EF1AE2B183EF78B00ACDEBF /* DICLoadPlist.m in Sources */,
 				0EF1ADF1183C4F2100ACDEBF /* DICAppDelegate.m in Sources */,
 				0EF1AE21183C513300ACDEBF /* DICRequestData.m in Sources */,
 				0EF1ADFD183C4F2100ACDEBF /* DICDetailViewController.m in Sources */,
@@ -284,7 +307,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ECADB8D183F1FD700EB2202 /* DICDictionaryToArray.m in Sources */,
 				0EF1AE12183C4F2100ACDEBF /* DictionaryTests.m in Sources */,
+				0EF1AE2C183EF78B00ACDEBF /* DICLoadPlist.m in Sources */,
 				0EF1AE1E183C50CD00ACDEBF /* DICParseResponse.m in Sources */,
 				0EF1AE22183C513300ACDEBF /* DICRequestData.m in Sources */,
 			);
@@ -415,10 +440,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dictionary/Dictionary-Prefix.pch";
 				INFOPLIST_FILE = "Dictionary/Dictionary-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -428,10 +456,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dictionary/Dictionary-Prefix.pch";
 				INFOPLIST_FILE = "Dictionary/Dictionary-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -497,6 +528,7 @@
 				0EF1AE17183C4F2100ACDEBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0EF1AE18183C4F2100ACDEBF /* Build configuration list for PBXNativeTarget "DictionaryTests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +537,7 @@
 				0EF1AE1A183C4F2100ACDEBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

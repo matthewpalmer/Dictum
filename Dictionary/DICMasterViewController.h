@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "DICRequestData.h"
+#import "DICLoadPlist.h"
+#import "DICDictionaryToArray.h"
 
 @class DICDetailViewController;
 

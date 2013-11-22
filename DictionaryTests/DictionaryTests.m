@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "DICRequestData.h"
+#import "DICLoadPlist.h"
 @interface DictionaryTests : XCTestCase
 
 @end
@@ -33,6 +34,14 @@
     NSURL *testedURL = [phraseToURLRD convertPhraseToURL:@"car"];
     NSURL *properURL = [NSURL URLWithString:@"http://glosbe.com/gapi/translate?from=eng&dest=eng&format=json&phrase=car"];
     XCTAssertEqualObjects(testedURL, properURL, @"%s: %@, %@", __PRETTY_FUNCTION__, testedURL, properURL);
+}
+- (void)testLoadPlist
+{
+    DICLoadPlist *loadPlist = [[DICLoadPlist alloc]init];
+    NSDictionary *dict = [loadPlist loadPlistAtFilename:@"test.plist"];
+    NSLog(@"test dict %@", dict);
+    XCTAssertTrue(dict, @"Dictionary from plist could not be found");
+    
 }
 
 // - (void)requestDataForURL:(NSURL *)url completionHandler:(void (^)(NSURLResponse *, NSData *, NSError *))block
