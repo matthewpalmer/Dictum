@@ -23,6 +23,10 @@
 		0EF1AE08183C4F2100ACDEBF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF1ADE4183C4F2100ACDEBF /* UIKit.framework */; };
 		0EF1AE10183C4F2100ACDEBF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0EF1AE0E183C4F2100ACDEBF /* InfoPlist.strings */; };
 		0EF1AE12183C4F2100ACDEBF /* DictionaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF1AE11183C4F2100ACDEBF /* DictionaryTests.m */; };
+		0EF1AE1D183C50CD00ACDEBF /* DICParseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF1AE1C183C50CD00ACDEBF /* DICParseResponse.m */; };
+		0EF1AE1E183C50CD00ACDEBF /* DICParseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF1AE1C183C50CD00ACDEBF /* DICParseResponse.m */; };
+		0EF1AE21183C513300ACDEBF /* DICRequestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF1AE20183C513300ACDEBF /* DICRequestData.m */; };
+		0EF1AE22183C513300ACDEBF /* DICRequestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF1AE20183C513300ACDEBF /* DICRequestData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,10 @@
 		0EF1AE0D183C4F2100ACDEBF /* DictionaryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DictionaryTests-Info.plist"; sourceTree = "<group>"; };
 		0EF1AE0F183C4F2100ACDEBF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0EF1AE11183C4F2100ACDEBF /* DictionaryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DictionaryTests.m; sourceTree = "<group>"; };
+		0EF1AE1B183C50CD00ACDEBF /* DICParseResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DICParseResponse.h; path = Dictionary/DICParseResponse.h; sourceTree = SOURCE_ROOT; };
+		0EF1AE1C183C50CD00ACDEBF /* DICParseResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DICParseResponse.m; path = Dictionary/DICParseResponse.m; sourceTree = SOURCE_ROOT; };
+		0EF1AE1F183C513300ACDEBF /* DICRequestData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DICRequestData.h; sourceTree = "<group>"; };
+		0EF1AE20183C513300ACDEBF /* DICRequestData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DICRequestData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +133,10 @@
 				0EF1ADF9183C4F2100ACDEBF /* DICMasterViewController.m */,
 				0EF1ADFB183C4F2100ACDEBF /* DICDetailViewController.h */,
 				0EF1ADFC183C4F2100ACDEBF /* DICDetailViewController.m */,
+				0EF1AE1B183C50CD00ACDEBF /* DICParseResponse.h */,
+				0EF1AE1C183C50CD00ACDEBF /* DICParseResponse.m */,
+				0EF1AE1F183C513300ACDEBF /* DICRequestData.h */,
+				0EF1AE20183C513300ACDEBF /* DICRequestData.m */,
 				0EF1ADFE183C4F2100ACDEBF /* Images.xcassets */,
 				0EF1ADE7183C4F2100ACDEBF /* Supporting Files */,
 			);
@@ -261,7 +273,9 @@
 			files = (
 				0EF1ADED183C4F2100ACDEBF /* main.m in Sources */,
 				0EF1ADF1183C4F2100ACDEBF /* DICAppDelegate.m in Sources */,
+				0EF1AE21183C513300ACDEBF /* DICRequestData.m in Sources */,
 				0EF1ADFD183C4F2100ACDEBF /* DICDetailViewController.m in Sources */,
+				0EF1AE1D183C50CD00ACDEBF /* DICParseResponse.m in Sources */,
 				0EF1ADFA183C4F2100ACDEBF /* DICMasterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +285,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EF1AE12183C4F2100ACDEBF /* DictionaryTests.m in Sources */,
+				0EF1AE1E183C50CD00ACDEBF /* DICParseResponse.m in Sources */,
+				0EF1AE22183C513300ACDEBF /* DICRequestData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

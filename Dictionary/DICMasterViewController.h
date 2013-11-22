@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DICRequestData.h"
 
 @class DICDetailViewController;
 
-@interface DICMasterViewController : UITableViewController
+@interface DICMasterViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
 
 @property (strong, nonatomic) DICDetailViewController *detailViewController;
+// Default 'master list' of content
+@property (strong, nonatomic) NSArray *masterContent;
+// Array containing filtered results of search
+@property (strong, nonatomic) NSMutableArray *searchResults;
 
 @end
