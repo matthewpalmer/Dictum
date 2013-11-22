@@ -38,7 +38,7 @@
 - (void)testLoadPlist
 {
     DICLoadPlist *loadPlist = [[DICLoadPlist alloc]init];
-    NSDictionary *dict = [loadPlist loadPlistAtFilename:@"test.plist"];
+    NSDictionary *dict = [loadPlist loadPlistAtFilename:@"wordsList.plist"];
     NSLog(@"test dict %@", dict);
     XCTAssertTrue(dict, @"Dictionary from plist could not be found");
     

@@ -39,14 +39,10 @@
     // $Search
     // Get data from the plist file
     DICLoadPlist *loader = [[DICLoadPlist alloc]init];
-    NSDictionary *dict = [loader loadPlistAtFilename:@"test.plist"];
-    NSLog(@"dict %@", dict);
-    DICDictionaryToArray *dta = [[DICDictionaryToArray alloc]init];
+    NSArray *wordList = [loader loadPlistAtFilename:@"wordsList.plist"];
     
     // Set up the array
-    NSArray *ar = [dta convertDictionaryToArray:dict];
-    NSLog(@"array %@", ar);
-    [self setMasterContent:[NSArray arrayWithArray:ar]];
+    [self setMasterContent:[NSArray arrayWithArray:wordList]];
     
     self.searchResults = [NSMutableArray arrayWithCapacity:self.masterContent.count];
     
@@ -59,8 +55,7 @@
         completionHandler:^void (NSURLResponse *res, NSData *data, NSError *err) {
             NSLog(@"WITHIN %@", data);
             NSString *str = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-            NSLog(@"%@", str);
-        }];
+            NSLog(@"%@", str); }];
 */
 }
 
@@ -211,11 +206,13 @@
         
     }
     
-    NSLog(@"length of input is %lu", (unsigned long)productName.length);
     //Return if length is less than three to improve performace
-    if (productName.length < 3) {
+    /*if (productName.length < 3) {
         return;
     }
+     */
+    
+    
     // There is search input
     // Clear the search array
     [self.searchResults removeAllObjects];

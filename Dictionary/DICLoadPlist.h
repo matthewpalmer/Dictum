@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface DICLoadPlist : NSObject
-- (NSDictionary *)loadPlistAtFilename:(NSString *)string;
+- (NSArray *)loadPlistAtFilename:(NSString *)string;
 @end

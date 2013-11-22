@@ -9,7 +9,7 @@
 #import "DICLoadPlist.h"
 
 @implementation DICLoadPlist
-- (NSDictionary *)loadPlistAtFilename:(NSString *)string
+- (NSArray *)loadPlistAtFilename:(NSString *)string
 {
 /*    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
     NSString *plistfile = [[paths objectAtIndex:0]stringByAppendingPathComponent:string];
@@ -18,12 +18,9 @@
     return plist;
  */
     NSString *path = [[NSBundle mainBundle]bundlePath];
-    NSLog(@"path %@", path);
     NSString *middlePath = [path stringByAppendingString:@"/"];
-    NSLog(@"middlePath %@", middlePath);
     NSString *finalPath = [middlePath stringByAppendingString:string];
-    NSLog(@"finalPath %@", finalPath);
-    NSDictionary *plist = [NSDictionary dictionaryWithContentsOfFile:finalPath];
-    return plist;
+    NSArray *ar = [NSArray arrayWithContentsOfFile:finalPath];
+    return ar;
 }
 @end
