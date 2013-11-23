@@ -235,7 +235,7 @@
     // When they match, add them to the search results array
     for (NSString *item in self.masterContent) {
 //        NSLog(@"item is %lu", (unsigned long)[item.allKeys[0] length]);
-        NSUInteger searchOptions = NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch;
+        NSUInteger searchOptions = NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch | NSAnchoredSearch;
         NSRange nameRange = NSMakeRange(0, [item length]);
         NSRange foundRange = [item rangeOfString:productName options:searchOptions range:nameRange];
         
