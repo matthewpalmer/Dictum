@@ -167,9 +167,18 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = _objects[indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
+        // A table view list item was selected
+        NSIndexPath *indexPath = [self.searchDisplayController.searchResultsTableView indexPathForCell:(UITableViewCell *)sender];
+        NSString *selectedWord;
+        if (indexPath != nil) {
+            // The word was selected from a search filtered list
+            selectedWord = self.searchResults[indexPath.row];
+        } else {
+            // No search has been conducted
+            indexPath = [self.tableView indexPathForCell:(UITableViewCell *)sender];
+            selectedWord = self.masterContent[indexPath.row];
+        }
+        [[segue destinationViewController]setSelectedWord:selectedWord];
         
     } else if ([segue.identifier isEqualToString:@"pushDetailView"]) {
         NSLog(@"Push detail view segue");

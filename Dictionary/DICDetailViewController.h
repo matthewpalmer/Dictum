@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DICRequestData.h"
+#import "DICParseResponse.h"
 
 @interface DICDetailViewController : UIViewController <UISplitViewControllerDelegate>
 
 @property (strong, nonatomic) id detailItem;
-
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (strong, nonatomic) NSString *selectedWord;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *indicatorView;
+@property (strong, nonatomic) IBOutlet UITextView *definitionTextView;
+- (void)requestDataForWord:(NSString *)word;
+- (void)displayDefinitions:(NSMutableArray *)array;
 @end

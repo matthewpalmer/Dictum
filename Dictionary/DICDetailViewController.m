@@ -34,10 +34,8 @@
 - (void)configureView
 {
     // Update the user interface for the detail item.
-
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
-    }
+    [self requestDataForWord:self.selectedWord];
+    self.navigationItem.title = self.selectedWord;
 }
 
 - (void)viewDidLoad
@@ -69,4 +67,53 @@
     self.masterPopoverController = nil;
 }
 
+#pragma mark - Request data
+
+- (void)requestDataForWord:(NSString *)word
+{
+    // Set up and start rotating spinner
+    [self.indicatorView startAnimating];
+    self.indicatorView.hidesWhenStopped = YES;
+    
+    //Request data from dictionary API and then parse it to a dict
+    DICRequestData *req = [[DICRequestData alloc]init];
+    NSURL *urlToGet = [req convertPhraseToURL:word];
+    [req requestDataForURL:urlToGet completionHandler:^(NSURLResponse *res, NSData *data, NSError *error) {
+        NSLog(@"within the block, %@ %@, %@", res, data, error);
+        if (error || !data) {
+            NSLog(@"there was an error %@", error);
+            
+            // UI work must be done on main thread
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.indicatorView stopAnimating];
+            });
+        } else {
+            DICParseResponse *parser = [[DICParseResponse alloc]init];
+            NSDictionary *dict = [parser parseResponseData:data];
+            NSMutableArray *definitionsList = [parser formatDataToDefinitions:dict];
+            NSLog(@"array: %@", definitionsList);
+            
+            
+            
+            // UI work must be done on main thread
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.indicatorView stopAnimating];
+                [self displayDefinitions:definitionsList];
+            });
+        }
+        
+    }];
+    
+}
+
+- (void)displayDefinitions:(NSMutableArray *)array
+{
+    for (int i = 0; i < array.count; i++) {
+        NSLog(@"%d", i);
+        array[i] = [[NSString stringWithFormat:@"%d. ", i] stringByAppendingString:array[i]];
+        NSLog(@"%@", array[i]);
+        self.definitionTextView.text = [[self.definitionTextView.text stringByAppendingString:@"\n" ] stringByAppendingString:  array[i]];
+    }
+    
+}
 @end
