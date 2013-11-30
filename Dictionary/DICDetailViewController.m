@@ -110,7 +110,9 @@
 {
     for (int i = 0; i < array.count; i++) {
         NSLog(@"%d", i);
-        array[i] = [[NSString stringWithFormat:@"%d. ", i] stringByAppendingString:array[i]];
+        // NOTE: We increase the counter by one within the string
+        array[i] = [[NSString stringWithFormat:@"%d. ", i+1] stringByAppendingString:array[i]];
+        array[i] = [array[i] stringByReplacingOccurrencesOfString:@"&#39;" withString:@"'"];
         NSLog(@"%@", array[i]);
         self.definitionTextView.text = [[self.definitionTextView.text stringByAppendingString:@"\n" ] stringByAppendingString:  array[i]];
     }
