@@ -32,8 +32,6 @@
 	// Do any additional setup after loading the view, typically from a nib.
     //self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DICDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
     // $Search
@@ -150,9 +148,20 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        NSDate *object = _objects[indexPath.row];
-        self.detailViewController.detailItem = object;
+        UIStoryboardSegue *sg = [[UIStoryboardSegue alloc]initWithIdentifier:@"showDetail"
+                                                                      source:self
+                                                                 destination:self.detailViewController];
+        [self prepareForSegue:sg sender:[self.tableView cellForRowAtIndexPath:indexPath]];
+        
+/*        if (self.searchResults.count > 0) {
+            // The search results array has been created
+            NSLog(@"%@", self.searchResults[indexPath.row]);
+        } else {
+            NSLog(@"%@", self.masterContent[indexPath.row]);
+        }
+ */
     }
+ 
 }
 
 /*
@@ -166,7 +175,6 @@
 #pragma mark - Segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         // A table view list item was selected
         NSIndexPath *indexPath = [self.searchDisplayController.searchResultsTableView indexPathForCell:(UITableViewCell *)sender];
@@ -178,11 +186,19 @@
             // No search has been conducted
             indexPath = [self.tableView indexPathForCell:(UITableViewCell *)sender];
             selectedWord = self.masterContent[indexPath.row];
+            
+
         }
-        [[segue destinationViewController]setSelectedWord:selectedWord];
+        if ([[UIDevice currentDevice]userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+            // iPad
+            [[segue destinationViewController]setSelectedWord:selectedWord];
+            [[segue destinationViewController]iPadSelectedWord];
+        } else {
+            // iPhone
+            [[segue destinationViewController]setSelectedWord:selectedWord];
+        }
         
     } else if ([segue.identifier isEqualToString:@"pushDetailView"]) {
-        NSLog(@"Push detail view segue");
         // Sender is the table view
         NSArray *sourceArray;
         NSIndexPath *indexPath = [self.searchDisplayController.searchResultsTableView indexPathForCell:(UITableViewCell *)sender];

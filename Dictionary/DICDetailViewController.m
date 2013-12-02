@@ -34,8 +34,14 @@
 - (void)configureView
 {
     // Update the user interface for the detail item.
-    [self requestDataForWord:self.selectedWord];
-    self.navigationItem.title = self.selectedWord;
+    if ([[UIDevice currentDevice]userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        NSLog(@"iPad %@", self.selectedWord);
+        return;
+    } else {
+        // iPhone
+       [self requestDataForWord:self.selectedWord];
+        self.navigationItem.title = self.selectedWord;
+    }
 }
 
 - (void)viewDidLoad
@@ -67,6 +73,16 @@
     self.masterPopoverController = nil;
 }
 
+#pragma mark - weird iPad method
+- (void)iPadSelectedWord
+{
+    NSLog(@"ipad selected word");
+    if (self.selectedWord) {
+        NSLog(@"selected word %@", self.selectedWord);
+        [self requestDataForWord:self.selectedWord];
+    }
+}
+
 #pragma mark - Request data
 
 - (void)requestDataForWord:(NSString *)word
@@ -79,7 +95,6 @@
     DICRequestData *req = [[DICRequestData alloc]init];
     NSURL *urlToGet = [req convertPhraseToURL:word];
     [req requestDataForURL:urlToGet completionHandler:^(NSURLResponse *res, NSData *data, NSError *error) {
-        NSLog(@"within the block, %@ %@, %@", res, data, error);
         if (error || !data) {
             NSLog(@"there was an error %@", error);
             

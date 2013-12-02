@@ -10,6 +10,7 @@
 #import "DICRequestData.h"
 #import "DICLoadPlist.h"
 #import "DICDictionaryToArray.h"
+#import "DICDetailViewController.h"
 
 @class DICDetailViewController;
 
