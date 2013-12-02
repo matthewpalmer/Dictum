@@ -45,17 +45,6 @@
     
     self.searchResults = [NSMutableArray arrayWithCapacity:self.masterContent.count];
     
-    
-   /*
-    
-    DICRequestData *rd = [[DICRequestData alloc]init];
-    // - (void)requestDataForURL:(NSURL *)url completionHandler:(void (^)(NSURLResponse *, NSData *, NSError *))block
-    [rd requestDataForURL:[NSURL URLWithString:@"http://glosbe.com/gapi/translate?from=eng&dest=eng&format=json&phrase=car"]
-        completionHandler:^void (NSURLResponse *res, NSData *data, NSError *err) {
-            NSLog(@"WITHIN %@", data);
-            NSString *str = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-            NSLog(@"%@", str); }];
-*/
 }
 
 - (void)didReceiveMemoryWarning
@@ -152,15 +141,17 @@
         UIStoryboardSegue *sg = [[UIStoryboardSegue alloc]initWithIdentifier:@"showDetail"
                                                                       source:self
                                                                  destination:self.detailViewController];
-        [self prepareForSegue:sg sender:[self.tableView cellForRowAtIndexPath:indexPath]];
         
-/*        if (self.searchResults.count > 0) {
+        
+        if (self.searchResults.count > 0 && self.searchDisplayController.searchBar.text.length > 0) {
             // The search results array has been created
             NSLog(@"%@", self.searchResults[indexPath.row]);
+            [self prepareForSegue:sg sender:[self.searchDisplayController.searchResultsTableView cellForRowAtIndexPath:indexPath]];
         } else {
             NSLog(@"%@", self.masterContent[indexPath.row]);
+            [self prepareForSegue:sg sender:[self.tableView cellForRowAtIndexPath:indexPath]];
         }
- */
+ 
     }
  
 }
@@ -178,15 +169,22 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         // A table view list item was selected
-        NSIndexPath *indexPath = [self.searchDisplayController.searchResultsTableView indexPathForCell:(UITableViewCell *)sender];
+        NSIndexPath *indexPath;
+        if ([[UIDevice currentDevice]userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+            // iPad
+            indexPath = [self.searchDisplayController.searchResultsTableView indexPathForCell:(UITableViewCell *)sender];
+        } else {
+            // iPhone
+            indexPath = [self.searchDisplayController.searchResultsTableView indexPathForCell:(UITableViewCell *)sender];
+            
+        }
         NSString *selectedWord;
-        NSLog(@"indexp is %@", indexPath);
+        NSLog(@"sender:%lu \n %@\n\n%@", (unsigned long)self.searchResults.count, sender, self.searchDisplayController.searchResultsTableView);
         
         if (indexPath != nil) {
             // The word was selected from a search filtered list
             selectedWord = self.searchResults[indexPath.row];
         } else {
-            // No search has been conducted
             indexPath = [self.tableView indexPathForCell:(UITableViewCell *)sender];
             selectedWord = self.masterContent[indexPath.row];
             
