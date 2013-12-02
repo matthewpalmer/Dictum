@@ -34,6 +34,7 @@
 
     self.detailViewController = (DICDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
+    
     // $Search
     // Get data from the plist file
     DICLoadPlist *loader = [[DICLoadPlist alloc]init];
@@ -179,6 +180,8 @@
         // A table view list item was selected
         NSIndexPath *indexPath = [self.searchDisplayController.searchResultsTableView indexPathForCell:(UITableViewCell *)sender];
         NSString *selectedWord;
+        NSLog(@"indexp is %@", indexPath);
+        
         if (indexPath != nil) {
             // The word was selected from a search filtered list
             selectedWord = self.searchResults[indexPath.row];
@@ -281,5 +284,6 @@
     [self updateFilteredContentForProductName:searchString type:nil];
     return YES;
 }
+
 
 @end

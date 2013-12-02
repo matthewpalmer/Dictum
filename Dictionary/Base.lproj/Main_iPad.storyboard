@@ -31,15 +31,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="703" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="env-Xu-g1K">
-                                <rect key="frame" x="0.0" y="140" width="703" height="628"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" editable="NO" text="Select or search for a word..." translatesAutoresizingMaskIntoConstraints="NO" id="env-Xu-g1K">
+                                <rect key="frame" x="10" y="66" width="420" height="702"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="kZf-Z1-xbV">
-                                <rect key="frame" x="341" y="91" width="20" height="20"/>
+                                <rect key="frame" x="210" y="100" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
@@ -47,7 +47,7 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
+                    <navigationItem key="navigationItem" title="Definition" id="mOI-FS-AaM"/>
                     <connections>
                         <outlet property="definitionTextView" destination="env-Xu-g1K" id="iqk-Tz-mNc"/>
                         <outlet property="indicatorView" destination="kZf-Z1-xbV" id="dEh-w3-bgs"/>
@@ -116,7 +116,7 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8"/>
+                    <navigationItem key="navigationItem" title="Dictionary" id="Zdf-7t-Un8"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="VPE-yR-MR2" id="7he-T3-78t"/>
                     </connections>

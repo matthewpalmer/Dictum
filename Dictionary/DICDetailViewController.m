@@ -35,7 +35,7 @@
 {
     // Update the user interface for the detail item.
     if ([[UIDevice currentDevice]userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        NSLog(@"iPad %@", self.selectedWord);
+        self.indicatorView.alpha = 0.0f;
         return;
     } else {
         // iPhone
@@ -61,7 +61,7 @@
 
 - (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
 {
-    barButtonItem.title = NSLocalizedString(@"Master", @"Master");
+    barButtonItem.title = NSLocalizedString(@"Dictionary", @"Dictionary");
     [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
     self.masterPopoverController = popoverController;
 }
@@ -73,13 +73,21 @@
     self.masterPopoverController = nil;
 }
 
+- (BOOL)splitViewController:(UISplitViewController *)svc shouldHideViewController:(UIViewController *)vc inOrientation:(UIInterfaceOrientation)orientation
+{
+    return NO;
+}
+
 #pragma mark - weird iPad method
 - (void)iPadSelectedWord
 {
     NSLog(@"ipad selected word");
     if (self.selectedWord) {
-        NSLog(@"selected word %@", self.selectedWord);
+        [[self definitionTextView]setContentInset:UIEdgeInsetsMake(-5, 0, 5,0)];
         [self requestDataForWord:self.selectedWord];
+        self.indicatorView.alpha = 1.0f;
+        self.title = self.selectedWord;
+        self.definitionTextView.text = @"";
     }
 }
 
@@ -89,6 +97,7 @@
 {
     // Set up and start rotating spinner
     [self.indicatorView startAnimating];
+    self.indicatorView.opaque = YES;
     self.indicatorView.hidesWhenStopped = YES;
     
     //Request data from dictionary API and then parse it to a dict
@@ -106,15 +115,14 @@
             DICParseResponse *parser = [[DICParseResponse alloc]init];
             NSDictionary *dict = [parser parseResponseData:data];
             NSMutableArray *definitionsList = [parser formatDataToDefinitions:dict];
-            NSLog(@"array: %@", definitionsList);
-            
-            
             
             // UI work must be done on main thread
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.indicatorView stopAnimating];
                 [self displayDefinitions:definitionsList];
             });
+            // Reset the definitions list
+            NSLog(@"resetting");
         }
         
     }];
@@ -123,14 +131,17 @@
 
 - (void)displayDefinitions:(NSMutableArray *)array
 {
+    self.definitionTextView.text = @"";
     for (int i = 0; i < array.count; i++) {
-        NSLog(@"%d", i);
         // NOTE: We increase the counter by one within the string
         array[i] = [[NSString stringWithFormat:@"%d. ", i+1] stringByAppendingString:array[i]];
         array[i] = [array[i] stringByReplacingOccurrencesOfString:@"&#39;" withString:@"'"];
-        NSLog(@"%@", array[i]);
         self.definitionTextView.text = [[self.definitionTextView.text stringByAppendingString:@"\n" ] stringByAppendingString:  array[i]];
     }
     
 }
+
+
+
+
 @end
