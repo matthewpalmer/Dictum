@@ -81,7 +81,6 @@
 #pragma mark - weird iPad method
 - (void)iPadSelectedWord
 {
-    NSLog(@"ipad selected word");
     if (self.selectedWord) {
         [[self definitionTextView]setContentInset:UIEdgeInsetsMake(-5, 0, 5,0)];
         [self requestDataForWord:self.selectedWord];
@@ -115,14 +114,11 @@
             DICParseResponse *parser = [[DICParseResponse alloc]init];
             NSDictionary *dict = [parser parseResponseData:data];
             NSMutableArray *definitionsList = [parser formatDataToDefinitions:dict];
-            
             // UI work must be done on main thread
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.indicatorView stopAnimating];
                 [self displayDefinitions:definitionsList];
             });
-            // Reset the definitions list
-            NSLog(@"resetting");
         }
         
     }];

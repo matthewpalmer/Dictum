@@ -145,10 +145,8 @@
         
         if (self.searchResults.count > 0 && self.searchDisplayController.searchBar.text.length > 0) {
             // The search results array has been created
-            NSLog(@"%@", self.searchResults[indexPath.row]);
             [self prepareForSegue:sg sender:[self.searchDisplayController.searchResultsTableView cellForRowAtIndexPath:indexPath]];
         } else {
-            NSLog(@"%@", self.masterContent[indexPath.row]);
             [self prepareForSegue:sg sender:[self.tableView cellForRowAtIndexPath:indexPath]];
         }
  
@@ -179,7 +177,6 @@
             
         }
         NSString *selectedWord;
-        NSLog(@"sender:%lu \n %@\n\n%@", (unsigned long)self.searchResults.count, sender, self.searchDisplayController.searchResultsTableView);
         
         if (indexPath != nil) {
             // The word was selected from a search filtered list

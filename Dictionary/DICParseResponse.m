@@ -25,7 +25,16 @@
     // Very dirty and specific parsing
     // Todo: write tests for this
     NSArray *v = [[[dict valueForKey:@"tuc"] valueForKey:@"meanings"]valueForKey:@"text"];
-    NSMutableArray *defns = [NSMutableArray arrayWithArray:v[0]];
+    NSMutableArray *defns = [[NSMutableArray alloc]init];
+    for (int i = 0; i < v.count; i++) {
+        // Make sure that the object isn't null
+        if (v[i] != [NSNull null]) {
+            // Append the array of definitions to the returning array
+            for (id o in v[i]) {
+                [defns addObject:o];
+            }
+        }
+    }
     return defns;
 }
 @end
