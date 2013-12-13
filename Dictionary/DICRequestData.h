@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface DICRequestData : NSObject
-- (void)requestDataForURL:(NSURL *)url completionHandler:(void (^)(NSURLResponse *res, NSData *data, NSError *error))block;
-- (NSURL *)convertPhraseToURL:(NSString *)phrase;
+- (void)requestDictionaryDataForWord:(NSString *)string completionHandler:(void (^)(NSURLResponse *res, NSData *data, NSError *error))block;
+- (void)requestThesaurusDataForWord:(NSString *)string completionHandler:(void (^)(NSURLResponse *res, NSData *data, NSError *error))block;
+- (NSURL *)convertPhraseToURLForDictionary:(NSString *)phrase;
+- (NSURL *)convertPhraseToURLForThesaurus:(NSString *)phrase;
 @end

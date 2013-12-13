@@ -101,8 +101,7 @@
     
     //Request data from dictionary API and then parse it to a dict
     DICRequestData *req = [[DICRequestData alloc]init];
-    NSURL *urlToGet = [req convertPhraseToURL:word];
-    [req requestDataForURL:urlToGet completionHandler:^(NSURLResponse *res, NSData *data, NSError *error) {
+    [req requestDictionaryDataForWord:word completionHandler:^(NSURLResponse *res, NSData *data, NSError *error) {
         if (error || !data) {
             NSLog(@"there was an error %@", error);
             
@@ -123,6 +122,32 @@
         
     }];
     
+    // Request thesaurus data
+    DICRequestData *thes = [[DICRequestData alloc]init];
+    [thes requestThesaurusDataForWord:word completionHandler:^(NSURLResponse *res, NSData *data, NSError *error) {
+        if (error || !data) {
+            NSLog(@"there was an error %@", error);
+            
+            // UI work must be done on main thread
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.indicatorView stopAnimating];
+            });
+        } else {
+            DICParseResponse *parseThes = [[DICParseResponse alloc]init];
+            NSDictionary *thesDic = [parseThes parseResponseData:data];
+
+            NSMutableArray *thesArray = [parseThes formatDataToThesaurus:thesDic];
+            // UI work must be done on main thread
+            dispatch_async(dispatch_get_main_queue(), ^{
+             //[self.indicatorView stopAnimating];
+                [self displayThesaurus:thesArray[0]];
+
+             });
+        }
+        
+    }];
+
+    
 }
 
 - (void)displayDefinitions:(NSMutableArray *)array
@@ -137,7 +162,19 @@
     
 }
 
-
+- (void)displayThesaurus:(NSMutableArray *)array
+{
+    NSString *midString = @"";
+    // Merge with displayDefinitions
+    self.thesaurusTextView.text = @"";
+    for (int i = 0; i < array.count; i++) {
+        midString = [midString stringByAppendingString:[NSString stringWithFormat:@"%@, ", array[i]]];
+        
+         
+    }
+    self.thesaurusTextView.frame = CGRectMake(0.0, self.definitionTextView.frame.size.height, self.view.frame.size.width, 150.0);
+    self.thesaurusTextView.text = midString;
+}
 
 
 @end

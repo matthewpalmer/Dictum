@@ -11,5 +11,6 @@
 @interface DICParseResponse : NSObject
 - (NSDictionary *)parseResponseData:(NSData *)data;
 - (NSMutableArray *)formatDataToDefinitions:(NSDictionary *)dict;
+- (NSMutableArray *)formatDataToThesaurus:(NSDictionary *)dict;
 
 @end

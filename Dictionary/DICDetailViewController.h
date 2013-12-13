@@ -16,8 +16,10 @@
 @property (strong, nonatomic) NSString *selectedWord;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *indicatorView;
 @property (strong, nonatomic) IBOutlet UITextView *definitionTextView;
+@property (strong, nonatomic) IBOutlet UITextView *thesaurusTextView;
 
 - (void)iPadSelectedWord;
 - (void)requestDataForWord:(NSString *)word completion:(void (^) (NSMutableArray *arrayOfDefinitions))block;
 - (void)displayDefinitions:(NSMutableArray *)array;
+- (void)displayThesaurus:(NSMutableArray *)array;
 @end
