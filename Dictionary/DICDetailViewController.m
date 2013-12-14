@@ -99,6 +99,8 @@
     self.indicatorView.opaque = YES;
     self.indicatorView.hidesWhenStopped = YES;
     
+    self.isDictionaryLoaded = [NSNumber numberWithBool:NO];
+    
     //Request data from dictionary API and then parse it to a dict
     DICRequestData *req = [[DICRequestData alloc]init];
     [req requestDictionaryDataForWord:word completionHandler:^(NSURLResponse *res, NSData *data, NSError *error) {
@@ -110,6 +112,7 @@
                 [self.indicatorView stopAnimating];
             });
         } else {
+
             DICParseResponse *parser = [[DICParseResponse alloc]init];
             NSDictionary *dict = [parser parseResponseData:data];
             NSMutableArray *definitionsList = [parser formatDataToDefinitions:dict];
@@ -140,8 +143,9 @@
             // UI work must be done on main thread
             dispatch_async(dispatch_get_main_queue(), ^{
              //[self.indicatorView stopAnimating];
-                [self displayThesaurus:thesArray[0]];
-
+                NSLog(@"thesarray %@", thesArray);
+                [self displayThesaurus:thesArray];
+                
              });
         }
         
@@ -152,28 +156,90 @@
 
 - (void)displayDefinitions:(NSMutableArray *)array
 {
-    self.definitionTextView.text = @"";
-    for (int i = 0; i < array.count; i++) {
-        // NOTE: We increase the counter by one within the string
-        array[i] = [[NSString stringWithFormat:@"%d. ", i+1] stringByAppendingString:array[i]];
-        array[i] = [array[i] stringByReplacingOccurrencesOfString:@"&#39;" withString:@"'"];
-        self.definitionTextView.text = [[self.definitionTextView.text stringByAppendingString:@"\n" ] stringByAppendingString:  array[i]];
+    if ([self.definitionTextView.text isEqualToString:@""]) {
+        // The dictionary has loaded first
+        NSLog(@"the dict loaded first");
+        self.definitionTextView.text = @"";
+        for (int i = 0; i < array.count; i++) {
+            // NOTE: We increase the counter by one within the string
+            array[i] = [[NSString stringWithFormat:@"%d. ", i+1] stringByAppendingString:array[i]];
+            array[i] = [array[i] stringByReplacingOccurrencesOfString:@"&#39;" withString:@"'"];
+            self.definitionTextView.text = [[self.definitionTextView.text stringByAppendingString:@"\n" ] stringByAppendingString:  array[i]];
+        }
+        [self textViewDidChange:self.definitionTextView];
+        
+    } else {
+        // There is already thesaurus data
+        NSLog(@"thes first");
+        NSString *currentContents = self.definitionTextView.text;
+        NSString *dictContents = [[NSString alloc]init];
+        for (int i = 0; i < array.count; i++) {
+            // NOTE: We increase the counter by one within the string
+            array[i] = [[NSString stringWithFormat:@"%d. ", i+1] stringByAppendingString:array[i]];
+            array[i] = [array[i] stringByReplacingOccurrencesOfString:@"&#39;" withString:@"'"];
+            dictContents = [dictContents stringByAppendingString:[NSString stringWithFormat:@"%@\n", array[i]]];
+        }
+        self.definitionTextView.text = [NSString stringWithFormat:@"%@\n\nSynonyms:\n%@", dictContents, currentContents];
+        [self textViewDidChange:self.definitionTextView];
+        
     }
+
     
+    NSLog(@"contents are %@", self.definitionTextView.text);
+    [self textViewDidChange:self.definitionTextView];
+
+
 }
+
+
 
 - (void)displayThesaurus:(NSMutableArray *)array
 {
-    NSString *midString = @"";
-    // Merge with displayDefinitions
-    self.thesaurusTextView.text = @"";
-    for (int i = 0; i < array.count; i++) {
-        midString = [midString stringByAppendingString:[NSString stringWithFormat:@"%@, ", array[i]]];
+    NSLog(@"array %@ %@", array, array[0]);
+    if ([array[0] isKindOfClass:[NSString class]]) {
+        NSLog(@"No synonyms found");
+        self.definitionTextView.text = [self.definitionTextView.text stringByAppendingString:@"No synonyms found."];
+    } else if ([self.definitionTextView.text isEqualToString:@""]) {
+        // The dictionary data has not yet loaded,
+        // i.e. the thesaurus loaded first
+        NSLog(@"yes text");
+        NSString *midString = [NSString stringWithFormat:@"%@", self.definitionTextView.text];
+        // Merge with displayDefinitions
         
-         
+        // The first element of the correct array is another array
+        
+        // TODO: WHAT HAPPENS IF IT'S GOT MULTIPLE SYNONYM VERSIONS
+        // EG: noun, verb, adjective ???
+        
+        NSArray *arrayOfSynonyms = [NSArray arrayWithArray:array[0]];
+        
+
+        for (int i = 0; i < arrayOfSynonyms.count; i++) {
+            midString = [midString stringByAppendingString:[NSString stringWithFormat:@"%@, ", arrayOfSynonyms[i]]];
+            
+            
+        }
+        self.definitionTextView.text = midString;
+        [self textViewDidChange:self.definitionTextView];
     }
-    self.thesaurusTextView.frame = CGRectMake(0.0, self.definitionTextView.frame.size.height, self.view.frame.size.width, 150.0);
-    self.thesaurusTextView.text = midString;
+
+}
+
+- (void)textViewDidChange:(UITextView *)textView
+{
+    // As of 14/12/13 1:35pm, not having this code makes the
+    // text view work properly i.e. it doesn't cut off any
+    // of the text and it scrolls fine
+    
+    // -------
+//    NSLog(@"tvch");
+//    CGFloat fixedWidth = textView.frame.size.width;
+//    CGSize newSize = [textView sizeThatFits:CGSizeMake(fixedWidth, MAXFLOAT+500.0)];
+//    CGRect newFrame = textView.frame;
+//    newFrame.size = CGSizeMake(fmaxf(newSize.width, fixedWidth), newSize.height);
+//    textView.frame = newFrame;
+    //CGSize size = [textView sizeToFit];
+    
 }
 
 

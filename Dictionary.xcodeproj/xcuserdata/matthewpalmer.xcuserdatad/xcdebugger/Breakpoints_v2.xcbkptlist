@@ -58,29 +58,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Dictionary/DICDetailViewController.h"
-            timestampString = "408598637.132026"
+            timestampString = "408672614.968282"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "thesaurusTextView"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "isDictionaryLoaded"
             landmarkType = "19">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Dictionary/DICDetailViewController.m"
-            timestampString = "408671141.898619"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
-            landmarkName = "-displayThesaurus:"
-            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

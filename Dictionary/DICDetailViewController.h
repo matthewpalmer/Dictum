@@ -10,13 +10,15 @@
 #import "DICRequestData.h"
 #import "DICParseResponse.h"
 
-@interface DICDetailViewController : UIViewController <UISplitViewControllerDelegate>
+@interface DICDetailViewController : UIViewController <UISplitViewControllerDelegate, UITextViewDelegate>
 
 @property (strong, nonatomic) id detailItem;
 @property (strong, nonatomic) NSString *selectedWord;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *indicatorView;
 @property (strong, nonatomic) IBOutlet UITextView *definitionTextView;
-@property (strong, nonatomic) IBOutlet UITextView *thesaurusTextView;
+
+@property (strong, nonatomic) NSNumber *isDictionaryLoaded;
+
 
 - (void)iPadSelectedWord;
 - (void)requestDataForWord:(NSString *)word completion:(void (^) (NSMutableArray *arrayOfDefinitions))block;

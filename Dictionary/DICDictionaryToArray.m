@@ -12,11 +12,8 @@
 - (NSMutableArray *)convertDictionaryToArray:(NSDictionary *)dict
 {
     NSMutableArray *ar = [[NSMutableArray alloc]init];
-    NSString *dummy = @"dum";
     for (id item in dict) {
-//        NSLog(@"item is %@ %@", item, [dict valueForKey:item]);
         [ar addObject:item];
-        
     }
     return ar;
 }

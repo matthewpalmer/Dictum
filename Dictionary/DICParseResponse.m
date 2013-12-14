@@ -41,12 +41,15 @@
 - (NSMutableArray *)formatDataToThesaurus:(NSDictionary *)dict
 {
     NSMutableArray *thes = [[NSMutableArray alloc]init];
-    for (NSString *key in dict) {
-        for (id o in [dict valueForKey:key]) {
-            [thes addObject:[[dict valueForKey:key]valueForKey:o]];
+    if (dict.count > 0) {
+        for (NSString *key in dict) {
+            for (id o in [dict valueForKey:key]) {
+                [thes addObject:[[dict valueForKey:key]valueForKey:o]];
+            }
         }
+        return thes;
     }
-    return thes;
+    return [NSMutableArray arrayWithObject:@"No synonyms found."];
 }
 
 @end

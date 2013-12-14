@@ -106,16 +106,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0Z-md-f8Y">
-                                <rect key="frame" x="0.0" y="65" width="320" height="301"/>
+                                <rect key="frame" x="0.0" y="65" width="320" height="503"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.57000000000000006" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Synonyms" translatesAutoresizingMaskIntoConstraints="NO" id="XDQ-ye-H6M">
-                                <rect key="frame" x="0.0" y="348" width="320" height="220"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -126,7 +119,6 @@
                     <connections>
                         <outlet property="definitionTextView" destination="r0Z-md-f8Y" id="DoX-cI-xp7"/>
                         <outlet property="indicatorView" destination="kik-uJ-dgV" id="4fk-lk-GeO"/>
-                        <outlet property="thesaurusTextView" destination="XDQ-ye-H6M" id="IGU-ct-Vrq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
