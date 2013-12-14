@@ -120,36 +120,38 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.indicatorView stopAnimating];
                 [self displayDefinitions:definitionsList];
-            });
-        }
-        
-    }];
-    
-    // Request thesaurus data
-    DICRequestData *thes = [[DICRequestData alloc]init];
-    [thes requestThesaurusDataForWord:word completionHandler:^(NSURLResponse *res, NSData *data, NSError *error) {
-        if (error || !data) {
-            NSLog(@"there was an error %@", error);
-            
-            // UI work must be done on main thread
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.indicatorView stopAnimating];
-            });
-        } else {
-            DICParseResponse *parseThes = [[DICParseResponse alloc]init];
-            NSDictionary *thesDic = [parseThes parseResponseData:data];
-
-            NSMutableArray *thesArray = [parseThes formatDataToThesaurus:thesDic];
-            // UI work must be done on main thread
-            dispatch_async(dispatch_get_main_queue(), ^{
-             //[self.indicatorView stopAnimating];
-                NSLog(@"thesarray %@", thesArray);
-                [self displayThesaurus:thesArray];
                 
-             });
+                
+                // Request thesaurus data
+                DICRequestData *thes = [[DICRequestData alloc]init];
+                [thes requestThesaurusDataForWord:word completionHandler:^(NSURLResponse *res, NSData *data, NSError *error) {
+                    if (error || !data) {
+                        NSLog(@"there was an error %@", error);
+                        
+                        // UI work must be done on main thread
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [self.indicatorView stopAnimating];
+                        });
+                    } else {
+                        DICParseResponse *parseThes = [[DICParseResponse alloc]init];
+                        NSDictionary *thesDic = [parseThes parseResponseData:data];
+                        
+                        NSMutableArray *thesArray = [parseThes formatDataToThesaurus:thesDic];
+                        // UI work must be done on main thread
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            //[self.indicatorView stopAnimating];
+                            NSLog(@"thesarray %@", thesArray);
+                            [self displayThesaurus:thesArray];
+                            
+                        });
+                    }
+                    
+                }];
+            });
         }
         
     }];
+
 
     
 }
@@ -199,11 +201,11 @@
     if ([array[0] isKindOfClass:[NSString class]]) {
         NSLog(@"No synonyms found");
         self.definitionTextView.text = [self.definitionTextView.text stringByAppendingString:@"No synonyms found."];
-    } else if ([self.definitionTextView.text isEqualToString:@""]) {
+    } else {
         // The dictionary data has not yet loaded,
         // i.e. the thesaurus loaded first
         NSLog(@"yes text");
-        NSString *midString = [NSString stringWithFormat:@"%@", self.definitionTextView.text];
+        NSString *midString = [NSString stringWithFormat:@"%@\n\n\nSynonyms:\n", self.definitionTextView.text];
         // Merge with displayDefinitions
         
         // The first element of the correct array is another array
