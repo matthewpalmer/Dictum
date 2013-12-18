@@ -17,6 +17,13 @@
 @property (strong, nonatomic) NSString *selectedWord;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *indicatorView;
 @property (strong, nonatomic) IBOutlet UITextView *definitionTextView;
+@property (strong, nonatomic) IBOutlet UITextView *thesaurusTextView;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) IBOutlet UILabel *definitionsHeaderLabel;
+@property (strong, nonatomic) IBOutlet UILabel *synonymsHeaderLabel;
+@property (strong, nonatomic) IBOutlet UILabel *definitionsContent;
+@property (strong, nonatomic) IBOutlet UILabel *synonymsContent;
+@property (strong, nonatomic) IBOutlet UIView *view;
 
 @property (strong, nonatomic) NSNumber *isDictionaryLoaded;
 
@@ -25,4 +32,5 @@
 - (void)requestDataForWord:(NSString *)word completion:(void (^) (NSMutableArray *arrayOfDefinitions))block;
 - (void)displayDefinitions:(NSMutableArray *)array;
 - (void)displayThesaurus:(NSMutableArray *)array;
+- (void)relocateTextViews;
 @end

@@ -34,6 +34,14 @@
 - (void)configureView
 {
     // Update the user interface for the detail item.
+    // Set the scrollview's frame to be beneath the nav bar and occupying the rest of the view
+    self.scrollView.frame = CGRectMake(0.0, self.navigationController.navigationBar.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - self.navigationController.navigationBar.frame.size.height);
+    
+    // Super annoying bug where dictionary header
+    // doesn't appear on device but does on IB
+    // and vice versa
+    // Manually set the frame for the definitions header
+//    self.definitionsHeaderLabel.frame = CGRectMake(15.0, self.navigationController.navigationBar.frame.size.height + 45.0, 100.0f, 30.0f);
     if ([[UIDevice currentDevice]userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         self.indicatorView.alpha = 0.0f;
         return;
@@ -41,6 +49,9 @@
         // iPhone
        [self requestDataForWord:self.selectedWord];
         self.navigationItem.title = self.selectedWord;
+
+
+
     }
 }
 
@@ -82,11 +93,10 @@
 - (void)iPadSelectedWord
 {
     if (self.selectedWord) {
-        [[self definitionTextView]setContentInset:UIEdgeInsetsMake(-5, 0, 5,0)];
         [self requestDataForWord:self.selectedWord];
         self.indicatorView.alpha = 1.0f;
         self.title = self.selectedWord;
-        self.definitionTextView.text = @"";
+        self.definitionsContent.text = @"";
     }
 }
 
@@ -118,8 +128,6 @@
             NSMutableArray *definitionsList = [parser formatDataToDefinitions:dict];
             // UI work must be done on main thread
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.indicatorView stopAnimating];
-                [self displayDefinitions:definitionsList];
                 
                 
                 // Request thesaurus data
@@ -141,7 +149,11 @@
                         dispatch_async(dispatch_get_main_queue(), ^{
                             //[self.indicatorView stopAnimating];
                             NSLog(@"thesarray %@", thesArray);
+                            [self.indicatorView stopAnimating];
+                            
                             [self displayThesaurus:thesArray];
+                            [self displayDefinitions:definitionsList];
+
                             
                         });
                     }
@@ -158,22 +170,22 @@
 
 - (void)displayDefinitions:(NSMutableArray *)array
 {
-    if ([self.definitionTextView.text isEqualToString:@""]) {
+    if ([self.definitionsContent.text isEqualToString:@""]) {
         // The dictionary has loaded first
         NSLog(@"the dict loaded first");
-        self.definitionTextView.text = @"";
+        self.definitionsContent.text = @"";
         for (int i = 0; i < array.count; i++) {
             // NOTE: We increase the counter by one within the string
             array[i] = [[NSString stringWithFormat:@"%d. ", i+1] stringByAppendingString:array[i]];
             array[i] = [array[i] stringByReplacingOccurrencesOfString:@"&#39;" withString:@"'"];
-            self.definitionTextView.text = [[self.definitionTextView.text stringByAppendingString:@"\n" ] stringByAppendingString:  array[i]];
+            self.definitionsContent.text = [[self.definitionsContent.text stringByAppendingString:@"\n" ] stringByAppendingString:  array[i]];
         }
-        [self textViewDidChange:self.definitionTextView];
+//        [self textViewDidChange:self.definitionsContent];
         
     } else {
         // There is already thesaurus data
         NSLog(@"thes first");
-        NSString *currentContents = self.definitionTextView.text;
+        NSString *currentContents = self.definitionsContent.text;
         NSString *dictContents = [[NSString alloc]init];
         for (int i = 0; i < array.count; i++) {
             // NOTE: We increase the counter by one within the string
@@ -181,32 +193,65 @@
             array[i] = [array[i] stringByReplacingOccurrencesOfString:@"&#39;" withString:@"'"];
             dictContents = [dictContents stringByAppendingString:[NSString stringWithFormat:@"%@\n", array[i]]];
         }
-        self.definitionTextView.text = [NSString stringWithFormat:@"%@\n\nSynonyms:\n%@", dictContents, currentContents];
-        [self textViewDidChange:self.definitionTextView];
+        self.definitionsContent.text = dictContents;
+//        [self textViewDidChange:self.definitionsContent];
         
     }
-
     
-    NSLog(@"contents are %@", self.definitionTextView.text);
-    [self textViewDidChange:self.definitionTextView];
+    /*
+     Relocate labels, views, etc
+     */
+    [self.definitionsContent sizeToFit];
+    [self.synonymsContent sizeToFit];
+    
+    // Move the definition content up
+    CGRect tC = self.definitionsContent.frame;
+    tC.origin.y = tC.origin.y - 30.0;
+    self.definitionsContent.frame = tC;
+    
+    // Move the synonyms header label down
+    CGRect tH = self.synonymsHeaderLabel.frame;
+    tH.origin.y = self.definitionsContent.frame.size.height + self.definitionsContent.frame.origin.y + 30.0f;
+    self.synonymsHeaderLabel.frame = tH;
+    
+    // Move the synonyms content label down
+    CGRect temp = self.synonymsContent.frame;
+    temp.origin.y = self.synonymsHeaderLabel.frame.origin.y + self.synonymsHeaderLabel.frame.size.height;
+    self.synonymsContent.frame = temp;
+    
+    // Set content size
+    CGSize scrollableSize = CGSizeMake(self.view.frame.size.width, self.synonymsContent.frame.origin.y + self.synonymsContent.frame.size.height + 30.0f);
+    [self.scrollView setContentSize:scrollableSize];
+    
+    NSLog(@"contents are %@", self.definitionsContent.text);
+//    [self textViewDidChange:self.definitionsContent];
 
 
 }
 
-
+- (void)relocateTextViews
+{
+//    //    CGFloat fixedWidth = textView.frame.size.width;
+//    //    CGSize newSize = [textView sizeThatFits:CGSizeMake(fixedWidth, MAXFLOAT+500.0)];
+//    //    CGRect newFrame = textView.frame;
+//    //    newFrame.size = CGSizeMake(fmaxf(newSize.width, fixedWidth), newSize.height);
+//    //    textView.frame = newFrame;
+//    //CGSize size = [textView sizeToFit];
+    
+   
+    
+}
 
 - (void)displayThesaurus:(NSMutableArray *)array
 {
     NSLog(@"array %@ %@", array, array[0]);
     if ([array[0] isKindOfClass:[NSString class]]) {
         NSLog(@"No synonyms found");
-        self.definitionTextView.text = [self.definitionTextView.text stringByAppendingString:@"No synonyms found."];
+        self.synonymsContent.text = [self.definitionsContent.text stringByAppendingString:@"No synonyms found."];
     } else {
         // The dictionary data has not yet loaded,
         // i.e. the thesaurus loaded first
-        NSLog(@"yes text");
-        NSString *synonymTitle = @"Syonyms";
-        NSString *midString = [NSString stringWithFormat:@"%@\n\n\n%@\n", self.definitionTextView.text, synonymTitle];
+        NSString *midString = @"";
         // Merge with displayDefinitions
         
         // The first element of the correct array is another array
@@ -222,8 +267,8 @@
             
             
         }
-        self.definitionTextView.text = midString;
-        [self textViewDidChange:self.definitionTextView];
+        self.synonymsContent.text = midString;
+//        [self textViewDidChange:self.synonymsContent];
     }
 
 }
