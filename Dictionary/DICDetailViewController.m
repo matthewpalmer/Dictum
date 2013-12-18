@@ -205,7 +205,8 @@
         // The dictionary data has not yet loaded,
         // i.e. the thesaurus loaded first
         NSLog(@"yes text");
-        NSString *midString = [NSString stringWithFormat:@"%@\n\n\nSynonyms:\n", self.definitionTextView.text];
+        NSString *synonymTitle = @"Syonyms";
+        NSString *midString = [NSString stringWithFormat:@"%@\n\n\n%@\n", self.definitionTextView.text, synonymTitle];
         // Merge with displayDefinitions
         
         // The first element of the correct array is another array

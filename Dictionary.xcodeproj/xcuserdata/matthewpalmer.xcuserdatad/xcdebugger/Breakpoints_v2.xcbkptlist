@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Dictionary/DICDetailViewController.h"
-            timestampString = "408672614.968282"
+            timestampString = "408692530.977146"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "isDictionaryLoaded"
             landmarkType = "19">
          </BreakpointContent>

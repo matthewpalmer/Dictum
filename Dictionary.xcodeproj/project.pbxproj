@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E098EAC185C272000D9963A /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E098EAB185C272000D9963A /* CoreText.framework */; };
 		0E1A4B6118401AE2006F3E6A /* testcase.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E1A4B6018401AE2006F3E6A /* testcase.plist */; };
 		0E1A4B6218401AE2006F3E6A /* testcase.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E1A4B6018401AE2006F3E6A /* testcase.plist */; };
 		0E1A4B6418401B0F006F3E6A /* wordsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E1A4B6318401B0F006F3E6A /* wordsList.plist */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E098EAB185C272000D9963A /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		0E1A4B6018401AE2006F3E6A /* testcase.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = testcase.plist; path = dictionaries/testcase.plist; sourceTree = "<group>"; };
 		0E1A4B6318401B0F006F3E6A /* wordsList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = wordsList.plist; path = dictionaries/wordsList.plist; sourceTree = "<group>"; };
 		0ECADB8A183F1FD700EB2202 /* DICDictionaryToArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DICDictionaryToArray.h; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E098EAC185C272000D9963A /* CoreText.framework in Frameworks */,
 				0EF1ADE3183C4F2100ACDEBF /* CoreGraphics.framework in Frameworks */,
 				0EF1ADE5183C4F2100ACDEBF /* UIKit.framework in Frameworks */,
 				0EF1ADE1183C4F2100ACDEBF /* Foundation.framework in Frameworks */,
@@ -130,6 +133,7 @@
 		0EF1ADDF183C4F2100ACDEBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0E098EAB185C272000D9963A /* CoreText.framework */,
 				0EF1ADE0183C4F2100ACDEBF /* Foundation.framework */,
 				0EF1ADE2183C4F2100ACDEBF /* CoreGraphics.framework */,
 				0EF1ADE4183C4F2100ACDEBF /* UIKit.framework */,
