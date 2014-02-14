@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Dictionary/DICMasterViewController.m"
-            timestampString = "409208078.358374"
+            timestampString = "414048260.606866"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
+            startingLineNumber = "252"
+            endingLineNumber = "252"
             landmarkName = "-updateFilteredContentForProductName:type:"
             landmarkType = "5">
          </BreakpointContent>
