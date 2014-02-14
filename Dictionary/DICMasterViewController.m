@@ -37,10 +37,10 @@
     /*
          self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.25f green:0.8f blue:0.51f alpha:1.00f];
      */
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.25f green:0.8f blue:0.51f alpha:1.00f];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    // self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.25f green:0.8f blue:0.51f alpha:1.00f];
+    // self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 
-    self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
+    // self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
     // $Search
     // Get data from the plist file
     DICLoadPlist *loader = [[DICLoadPlist alloc]init];
@@ -51,10 +51,6 @@
     
     self.searchResults = [NSMutableArray arrayWithCapacity:self.masterContent.count];
     
-}
-
--(UIStatusBarStyle)preferredStatusBarStyle{
-    return UIStatusBarStyleLightContent;
 }
 
 - (void)didReceiveMemoryWarning
@@ -152,13 +148,22 @@
                                                                       source:self
                                                                  destination:self.detailViewController];
         
+        NSString *selectedWord;
+        
+
+        
         
         if (self.searchResults.count > 0 && self.searchDisplayController.searchBar.text.length > 0) {
             // The search results array has been created
-            [self prepareForSegue:sg sender:[self.searchDisplayController.searchResultsTableView cellForRowAtIndexPath:indexPath]];
+//            [self prepareForSegue:sg sender:[self.searchDisplayController.searchResultsTableView cellForRowAtIndexPath:indexPath]];
+            selectedWord = self.searchResults[indexPath.row];
         } else {
-            [self prepareForSegue:sg sender:[self.tableView cellForRowAtIndexPath:indexPath]];
+//            [self prepareForSegue:sg sender:[self.tableView cellForRowAtIndexPath:indexPath]];
+            selectedWord = self.masterContent[indexPath.row];
         }
+        
+        UIReferenceLibraryViewController *ref = [[UIReferenceLibraryViewController alloc]initWithTerm:selectedWord];
+        [self presentViewController:ref animated:YES completion:nil];
  
     }
  
@@ -199,6 +204,8 @@
             
 
         }
+        UIReferenceLibraryViewController *ref = [[UIReferenceLibraryViewController alloc]initWithTerm:selectedWord];
+        [self presentViewController:ref animated:YES completion:nil];
         if ([[UIDevice currentDevice]userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
             // iPad
             [[segue destinationViewController]setSelectedWord:selectedWord];

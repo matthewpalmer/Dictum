@@ -42,6 +42,7 @@
     // and vice versa
     // Manually set the frame for the definitions header
 //    self.definitionsHeaderLabel.frame = CGRectMake(15.0, self.navigationController.navigationBar.frame.size.height + 45.0, 100.0f, 30.0f);
+    
     if ([[UIDevice currentDevice]userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         self.indicatorView.alpha = 0.0f;
         return;
