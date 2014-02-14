@@ -34,7 +34,13 @@
 
     self.detailViewController = (DICDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
-    
+    /*
+         self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.25f green:0.8f blue:0.51f alpha:1.00f];
+     */
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.25f green:0.8f blue:0.51f alpha:1.00f];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+
+    self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
     // $Search
     // Get data from the plist file
     DICLoadPlist *loader = [[DICLoadPlist alloc]init];
@@ -45,6 +51,10 @@
     
     self.searchResults = [NSMutableArray arrayWithCapacity:self.masterContent.count];
     
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)didReceiveMemoryWarning

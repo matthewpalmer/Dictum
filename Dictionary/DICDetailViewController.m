@@ -206,7 +206,7 @@
     
     // Move the definition content up
     CGRect tC = self.definitionsContent.frame;
-    tC.origin.y = tC.origin.y - 30.0;
+    tC.origin.y = self.definitionsHeaderLabel.frame.origin.y + self.definitionsHeaderLabel.frame.size.height;
     self.definitionsContent.frame = tC;
     
     // Move the synonyms header label down
@@ -220,8 +220,9 @@
     self.synonymsContent.frame = temp;
     
     // Set content size
-    CGSize scrollableSize = CGSizeMake(self.view.frame.size.width, self.synonymsContent.frame.origin.y + self.synonymsContent.frame.size.height + 30.0f);
-    [self.scrollView setContentSize:scrollableSize];
+    NSLog(@"VARLUELUE %f", self.definitionsContent.frame.size.height + self.synonymsContent.frame.origin.y + self.synonymsContent.frame.size.height + 30.0f);
+    CGSize scrollableSize = CGSizeMake(self.view.frame.size.width, 1200.0f);
+    [self.scrollView setContentSize:CGSizeMake(self.view.frame.size.width, 2200.0f)];
     
     NSLog(@"contents are %@", self.definitionsContent.text);
 //    [self textViewDidChange:self.definitionsContent];
