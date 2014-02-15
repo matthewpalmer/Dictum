@@ -44,12 +44,16 @@
     // $Search
     // Get data from the plist file
     DICLoadPlist *loader = [[DICLoadPlist alloc]init];
-    NSArray *wordList = [loader loadPlistAtFilename:@"wordsList.plist"];
+    NSArray *wordList = [loader loadPlistAtFilename:@"web2.plist"];
     
     // Set up the array
     [self setMasterContent:[NSArray arrayWithArray:wordList]];
     
     self.searchResults = [NSMutableArray arrayWithCapacity:self.masterContent.count];
+    
+    // Make the search bar active
+    NSLog(@"%@", self.searchDisplayController.searchBar);
+    [self.searchDisplayController.searchBar becomeFirstResponder];
     
 }
 
@@ -143,16 +147,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        UIStoryboardSegue *sg = [[UIStoryboardSegue alloc]initWithIdentifier:@"showDetail"
-                                                                      source:self
-                                                                 destination:self.detailViewController];
+    // if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+    //    UIStoryboardSegue *sg = [[UIStoryboardSegue alloc]initWithIdentifier:@"showDetail"
+    //                                                                  source:self
+    //                                                             destination:self.detailViewController];
         
         NSString *selectedWord;
-        
-
-        
-        
+    
         if (self.searchResults.count > 0 && self.searchDisplayController.searchBar.text.length > 0) {
             // The search results array has been created
 //            [self prepareForSegue:sg sender:[self.searchDisplayController.searchResultsTableView cellForRowAtIndexPath:indexPath]];
@@ -164,8 +165,6 @@
         
         UIReferenceLibraryViewController *ref = [[UIReferenceLibraryViewController alloc]initWithTerm:selectedWord];
         [self presentViewController:ref animated:YES completion:nil];
- 
-    }
  
 }
 

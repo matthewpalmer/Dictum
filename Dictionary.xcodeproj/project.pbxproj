@@ -12,6 +12,8 @@
 		0E1A4B6218401AE2006F3E6A /* testcase.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E1A4B6018401AE2006F3E6A /* testcase.plist */; };
 		0E1A4B6418401B0F006F3E6A /* wordsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E1A4B6318401B0F006F3E6A /* wordsList.plist */; };
 		0E1A4B6518401B0F006F3E6A /* wordsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E1A4B6318401B0F006F3E6A /* wordsList.plist */; };
+		0EC0442C18B0142A00022E8A /* web2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EC0442B18B0142A00022E8A /* web2.plist */; };
+		0EC0442D18B0142A00022E8A /* web2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EC0442B18B0142A00022E8A /* web2.plist */; };
 		0ECADB8C183F1FD700EB2202 /* DICDictionaryToArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECADB8B183F1FD700EB2202 /* DICDictionaryToArray.m */; };
 		0ECADB8D183F1FD700EB2202 /* DICDictionaryToArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECADB8B183F1FD700EB2202 /* DICDictionaryToArray.m */; };
 		0EF1ADE1183C4F2100ACDEBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF1ADE0183C4F2100ACDEBF /* Foundation.framework */; };
@@ -52,6 +54,7 @@
 		0E098EAB185C272000D9963A /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		0E1A4B6018401AE2006F3E6A /* testcase.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = testcase.plist; path = dictionaries/testcase.plist; sourceTree = "<group>"; };
 		0E1A4B6318401B0F006F3E6A /* wordsList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = wordsList.plist; path = dictionaries/wordsList.plist; sourceTree = "<group>"; };
+		0EC0442B18B0142A00022E8A /* web2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = web2.plist; path = dictionaries/web2.plist; sourceTree = "<group>"; };
 		0ECADB8A183F1FD700EB2202 /* DICDictionaryToArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DICDictionaryToArray.h; sourceTree = "<group>"; };
 		0ECADB8B183F1FD700EB2202 /* DICDictionaryToArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DICDictionaryToArray.m; sourceTree = "<group>"; };
 		0EF1ADDD183C4F2100ACDEBF /* Dictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +121,7 @@
 				0EF1ADDE183C4F2100ACDEBF /* Products */,
 				0E1A4B6018401AE2006F3E6A /* testcase.plist */,
 				0E1A4B6318401B0F006F3E6A /* wordsList.plist */,
+				0EC0442B18B0142A00022E8A /* web2.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -280,6 +284,7 @@
 				0EF1ADFF183C4F2100ACDEBF /* Images.xcassets in Resources */,
 				0E1A4B6418401B0F006F3E6A /* wordsList.plist in Resources */,
 				0E1A4B6118401AE2006F3E6A /* testcase.plist in Resources */,
+				0EC0442C18B0142A00022E8A /* web2.plist in Resources */,
 				0EF1ADF4183C4F2100ACDEBF /* Main_iPhone.storyboard in Resources */,
 				0EF1ADEB183C4F2100ACDEBF /* InfoPlist.strings in Resources */,
 			);
@@ -289,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EC0442D18B0142A00022E8A /* web2.plist in Resources */,
 				0EF1AE10183C4F2100ACDEBF /* InfoPlist.strings in Resources */,
 				0E1A4B6218401AE2006F3E6A /* testcase.plist in Resources */,
 				0E1A4B6518401B0F006F3E6A /* wordsList.plist in Resources */,
