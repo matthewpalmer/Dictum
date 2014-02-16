@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0EF1ADDC183C4F2100ACDEBF"
-               BuildableName = "Dictionary.app"
-               BlueprintName = "Dictionary"
-               ReferencedContainer = "container:Dictionary.xcodeproj">
+               BuildableName = "Dictum.app"
+               BlueprintName = "Dictum"
+               ReferencedContainer = "container:Dictum.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0EF1AE03183C4F2100ACDEBF"
-               BuildableName = "DictionaryTests.xctest"
-               BlueprintName = "DictionaryTests"
-               ReferencedContainer = "container:Dictionary.xcodeproj">
+               BuildableName = "DictumTests.xctest"
+               BlueprintName = "DictumTests"
+               ReferencedContainer = "container:Dictum.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0EF1ADDC183C4F2100ACDEBF"
-            BuildableName = "Dictionary.app"
-            BlueprintName = "Dictionary"
-            ReferencedContainer = "container:Dictionary.xcodeproj">
+            BuildableName = "Dictum.app"
+            BlueprintName = "Dictum"
+            ReferencedContainer = "container:Dictum.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0EF1ADDC183C4F2100ACDEBF"
-            BuildableName = "Dictionary.app"
-            BlueprintName = "Dictionary"
-            ReferencedContainer = "container:Dictionary.xcodeproj">
+            BuildableName = "Dictum.app"
+            BlueprintName = "Dictum"
+            ReferencedContainer = "container:Dictum.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0EF1ADDC183C4F2100ACDEBF"
-            BuildableName = "Dictionary.app"
-            BlueprintName = "Dictionary"
-            ReferencedContainer = "container:Dictionary.xcodeproj">
+            BuildableName = "Dictum.app"
+            BlueprintName = "Dictum"
+            ReferencedContainer = "container:Dictum.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -114,7 +114,7 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Dictionary" id="Zdf-7t-Un8"/>
+                    <navigationItem key="navigationItem" title="Dictum" id="Zdf-7t-Un8"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="VPE-yR-MR2" id="7he-T3-78t"/>
                     </connections>

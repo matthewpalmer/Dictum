@@ -57,14 +57,14 @@
 		0EC0442B18B0142A00022E8A /* web2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = web2.plist; path = dictionaries/web2.plist; sourceTree = "<group>"; };
 		0ECADB8A183F1FD700EB2202 /* DICDictionaryToArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DICDictionaryToArray.h; sourceTree = "<group>"; };
 		0ECADB8B183F1FD700EB2202 /* DICDictionaryToArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DICDictionaryToArray.m; sourceTree = "<group>"; };
-		0EF1ADDD183C4F2100ACDEBF /* Dictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EF1ADDD183C4F2100ACDEBF /* Dictum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dictum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EF1ADE0183C4F2100ACDEBF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0EF1ADE2183C4F2100ACDEBF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		0EF1ADE4183C4F2100ACDEBF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		0EF1ADE8183C4F2100ACDEBF /* Dictionary-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dictionary-Info.plist"; sourceTree = "<group>"; };
+		0EF1ADE8183C4F2100ACDEBF /* Dictum-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dictum-Info.plist"; sourceTree = "<group>"; };
 		0EF1ADEA183C4F2100ACDEBF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0EF1ADEC183C4F2100ACDEBF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0EF1ADEE183C4F2100ACDEBF /* Dictionary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dictionary-Prefix.pch"; sourceTree = "<group>"; };
+		0EF1ADEE183C4F2100ACDEBF /* Dictum-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dictum-Prefix.pch"; sourceTree = "<group>"; };
 		0EF1ADEF183C4F2100ACDEBF /* DICAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DICAppDelegate.h; sourceTree = "<group>"; };
 		0EF1ADF0183C4F2100ACDEBF /* DICAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DICAppDelegate.m; sourceTree = "<group>"; };
 		0EF1ADF3183C4F2100ACDEBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
@@ -74,9 +74,9 @@
 		0EF1ADFB183C4F2100ACDEBF /* DICDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DICDetailViewController.h; sourceTree = "<group>"; };
 		0EF1ADFC183C4F2100ACDEBF /* DICDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DICDetailViewController.m; sourceTree = "<group>"; };
 		0EF1ADFE183C4F2100ACDEBF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		0EF1AE04183C4F2100ACDEBF /* DictionaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DictionaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EF1AE04183C4F2100ACDEBF /* DictumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DictumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EF1AE05183C4F2100ACDEBF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		0EF1AE0D183C4F2100ACDEBF /* DictionaryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DictionaryTests-Info.plist"; sourceTree = "<group>"; };
+		0EF1AE0D183C4F2100ACDEBF /* DictumTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DictumTests-Info.plist"; sourceTree = "<group>"; };
 		0EF1AE0F183C4F2100ACDEBF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0EF1AE11183C4F2100ACDEBF /* DictionaryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DictionaryTests.m; sourceTree = "<group>"; };
 		0EF1AE1B183C50CD00ACDEBF /* DICParseResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DICParseResponse.h; path = Dictionary/DICParseResponse.h; sourceTree = SOURCE_ROOT; };
@@ -128,8 +128,8 @@
 		0EF1ADDE183C4F2100ACDEBF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0EF1ADDD183C4F2100ACDEBF /* Dictionary.app */,
-				0EF1AE04183C4F2100ACDEBF /* DictionaryTests.xctest */,
+				0EF1ADDD183C4F2100ACDEBF /* Dictum.app */,
+				0EF1AE04183C4F2100ACDEBF /* DictumTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -174,10 +174,10 @@
 		0EF1ADE7183C4F2100ACDEBF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0EF1ADE8183C4F2100ACDEBF /* Dictionary-Info.plist */,
+				0EF1ADE8183C4F2100ACDEBF /* Dictum-Info.plist */,
 				0EF1ADE9183C4F2100ACDEBF /* InfoPlist.strings */,
 				0EF1ADEC183C4F2100ACDEBF /* main.m */,
-				0EF1ADEE183C4F2100ACDEBF /* Dictionary-Prefix.pch */,
+				0EF1ADEE183C4F2100ACDEBF /* Dictum-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -194,7 +194,7 @@
 		0EF1AE0C183C4F2100ACDEBF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0EF1AE0D183C4F2100ACDEBF /* DictionaryTests-Info.plist */,
+				0EF1AE0D183C4F2100ACDEBF /* DictumTests-Info.plist */,
 				0EF1AE0E183C4F2100ACDEBF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -203,9 +203,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0EF1ADDC183C4F2100ACDEBF /* Dictionary */ = {
+		0EF1ADDC183C4F2100ACDEBF /* Dictum */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0EF1AE15183C4F2100ACDEBF /* Build configuration list for PBXNativeTarget "Dictionary" */;
+			buildConfigurationList = 0EF1AE15183C4F2100ACDEBF /* Build configuration list for PBXNativeTarget "Dictum" */;
 			buildPhases = (
 				0EF1ADD9183C4F2100ACDEBF /* Sources */,
 				0EF1ADDA183C4F2100ACDEBF /* Frameworks */,
@@ -215,14 +215,14 @@
 			);
 			dependencies = (
 			);
-			name = Dictionary;
+			name = Dictum;
 			productName = Dictionary;
-			productReference = 0EF1ADDD183C4F2100ACDEBF /* Dictionary.app */;
+			productReference = 0EF1ADDD183C4F2100ACDEBF /* Dictum.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0EF1AE03183C4F2100ACDEBF /* DictionaryTests */ = {
+		0EF1AE03183C4F2100ACDEBF /* DictumTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0EF1AE18183C4F2100ACDEBF /* Build configuration list for PBXNativeTarget "DictionaryTests" */;
+			buildConfigurationList = 0EF1AE18183C4F2100ACDEBF /* Build configuration list for PBXNativeTarget "DictumTests" */;
 			buildPhases = (
 				0EF1AE00183C4F2100ACDEBF /* Sources */,
 				0EF1AE01183C4F2100ACDEBF /* Frameworks */,
@@ -233,9 +233,9 @@
 			dependencies = (
 				0EF1AE0A183C4F2100ACDEBF /* PBXTargetDependency */,
 			);
-			name = DictionaryTests;
+			name = DictumTests;
 			productName = DictionaryTests;
-			productReference = 0EF1AE04183C4F2100ACDEBF /* DictionaryTests.xctest */;
+			productReference = 0EF1AE04183C4F2100ACDEBF /* DictumTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -256,7 +256,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0EF1ADD8183C4F2100ACDEBF /* Build configuration list for PBXProject "Dictionary" */;
+			buildConfigurationList = 0EF1ADD8183C4F2100ACDEBF /* Build configuration list for PBXProject "Dictum" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -269,8 +269,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0EF1ADDC183C4F2100ACDEBF /* Dictionary */,
-				0EF1AE03183C4F2100ACDEBF /* DictionaryTests */,
+				0EF1ADDC183C4F2100ACDEBF /* Dictum */,
+				0EF1AE03183C4F2100ACDEBF /* DictumTests */,
 			);
 		};
 /* End PBXProject section */
@@ -336,7 +336,7 @@
 /* Begin PBXTargetDependency section */
 		0EF1AE0A183C4F2100ACDEBF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0EF1ADDC183C4F2100ACDEBF /* Dictionary */;
+			target = 0EF1ADDC183C4F2100ACDEBF /* Dictum */;
 			targetProxy = 0EF1AE09183C4F2100ACDEBF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -459,9 +459,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Dictionary/Dictionary-Prefix.pch";
-				INFOPLIST_FILE = "Dictionary/Dictionary-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Dictionary/Dictum-Prefix.pch";
+				INFOPLIST_FILE = "Dictionary/Dictum-Info.plist";
+				PRODUCT_NAME = Dictum;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -475,9 +475,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Dictionary/Dictionary-Prefix.pch";
-				INFOPLIST_FILE = "Dictionary/Dictionary-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Dictionary/Dictum-Prefix.pch";
+				INFOPLIST_FILE = "Dictionary/Dictum-Info.plist";
+				PRODUCT_NAME = Dictum;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -499,8 +499,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "DictionaryTests/DictionaryTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "DictionaryTests/DictumTests-Info.plist";
+				PRODUCT_NAME = DictumTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -518,8 +518,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dictionary/Dictionary-Prefix.pch";
-				INFOPLIST_FILE = "DictionaryTests/DictionaryTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "DictionaryTests/DictumTests-Info.plist";
+				PRODUCT_NAME = DictumTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -528,7 +528,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0EF1ADD8183C4F2100ACDEBF /* Build configuration list for PBXProject "Dictionary" */ = {
+		0EF1ADD8183C4F2100ACDEBF /* Build configuration list for PBXProject "Dictum" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0EF1AE13183C4F2100ACDEBF /* Debug */,
@@ -537,7 +537,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0EF1AE15183C4F2100ACDEBF /* Build configuration list for PBXNativeTarget "Dictionary" */ = {
+		0EF1AE15183C4F2100ACDEBF /* Build configuration list for PBXNativeTarget "Dictum" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0EF1AE16183C4F2100ACDEBF /* Debug */,
@@ -546,7 +546,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0EF1AE18183C4F2100ACDEBF /* Build configuration list for PBXNativeTarget "DictionaryTests" */ = {
+		0EF1AE18183C4F2100ACDEBF /* Build configuration list for PBXNativeTarget "DictumTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0EF1AE19183C4F2100ACDEBF /* Debug */,
