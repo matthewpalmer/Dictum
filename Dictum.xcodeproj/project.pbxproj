@@ -12,6 +12,7 @@
 		0E1A4B6218401AE2006F3E6A /* testcase.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E1A4B6018401AE2006F3E6A /* testcase.plist */; };
 		0E1A4B6418401B0F006F3E6A /* wordsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E1A4B6318401B0F006F3E6A /* wordsList.plist */; };
 		0E1A4B6518401B0F006F3E6A /* wordsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E1A4B6318401B0F006F3E6A /* wordsList.plist */; };
+		0E8E98BB18B047720016A3A5 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8E98BA18B047720016A3A5 /* Crashlytics.framework */; };
 		0EC0442C18B0142A00022E8A /* web2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EC0442B18B0142A00022E8A /* web2.plist */; };
 		0EC0442D18B0142A00022E8A /* web2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EC0442B18B0142A00022E8A /* web2.plist */; };
 		0ECADB8C183F1FD700EB2202 /* DICDictionaryToArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECADB8B183F1FD700EB2202 /* DICDictionaryToArray.m */; };
@@ -54,6 +55,7 @@
 		0E098EAB185C272000D9963A /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		0E1A4B6018401AE2006F3E6A /* testcase.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = testcase.plist; path = dictionaries/testcase.plist; sourceTree = "<group>"; };
 		0E1A4B6318401B0F006F3E6A /* wordsList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = wordsList.plist; path = dictionaries/wordsList.plist; sourceTree = "<group>"; };
+		0E8E98BA18B047720016A3A5 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		0EC0442B18B0142A00022E8A /* web2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = web2.plist; path = dictionaries/web2.plist; sourceTree = "<group>"; };
 		0ECADB8A183F1FD700EB2202 /* DICDictionaryToArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DICDictionaryToArray.h; sourceTree = "<group>"; };
 		0ECADB8B183F1FD700EB2202 /* DICDictionaryToArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DICDictionaryToArray.m; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E098EAC185C272000D9963A /* CoreText.framework in Frameworks */,
+				0E8E98BB18B047720016A3A5 /* Crashlytics.framework in Frameworks */,
 				0EF1ADE3183C4F2100ACDEBF /* CoreGraphics.framework in Frameworks */,
 				0EF1ADE5183C4F2100ACDEBF /* UIKit.framework in Frameworks */,
 				0EF1ADE1183C4F2100ACDEBF /* Foundation.framework in Frameworks */,
@@ -137,6 +140,7 @@
 		0EF1ADDF183C4F2100ACDEBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0E8E98BA18B047720016A3A5 /* Crashlytics.framework */,
 				0E098EAB185C272000D9963A /* CoreText.framework */,
 				0EF1ADE0183C4F2100ACDEBF /* Foundation.framework */,
 				0EF1ADE2183C4F2100ACDEBF /* CoreGraphics.framework */,
@@ -210,6 +214,7 @@
 				0EF1ADD9183C4F2100ACDEBF /* Sources */,
 				0EF1ADDA183C4F2100ACDEBF /* Frameworks */,
 				0EF1ADDB183C4F2100ACDEBF /* Resources */,
+				0E8E98B918B047540016A3A5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -302,6 +307,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E8E98B918B047540016A3A5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run fa7be0281dd292bb1ebe46cd38f473b465aaaf62 b192edfdcec96c40801f729edc1be11351d584ed6bf004fd072bea149e42253c";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0EF1ADD9183C4F2100ACDEBF /* Sources */ = {
@@ -458,6 +479,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/matthewpalmer/dev/ios/Dictionary,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dictionary/Dictum-Prefix.pch";
 				INFOPLIST_FILE = "Dictionary/Dictum-Info.plist";
@@ -474,6 +499,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/matthewpalmer/dev/ios/Dictionary,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dictionary/Dictum-Prefix.pch";
 				INFOPLIST_FILE = "Dictionary/Dictum-Info.plist";

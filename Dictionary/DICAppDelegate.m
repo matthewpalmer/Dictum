@@ -12,7 +12,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [Crashlytics startWithAPIKey:@"fa7be0281dd292bb1ebe46cd38f473b465aaaf62"];
+    //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
