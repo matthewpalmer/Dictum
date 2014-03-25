@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0E098EAC185C272000D9963A /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E098EAB185C272000D9963A /* CoreText.framework */; };
+		0E0E5D3918E16B4D0054DE90 /* DICRecentWordsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E0E5D3818E16B4D0054DE90 /* DICRecentWordsTableViewController.m */; };
+		0E0E5D3C18E16E220054DE90 /* DICRecentWords.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E0E5D3B18E16E220054DE90 /* DICRecentWords.m */; };
 		0E1A4B6118401AE2006F3E6A /* testcase.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E1A4B6018401AE2006F3E6A /* testcase.plist */; };
 		0E1A4B6218401AE2006F3E6A /* testcase.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E1A4B6018401AE2006F3E6A /* testcase.plist */; };
 		0E1A4B6418401B0F006F3E6A /* wordsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E1A4B6318401B0F006F3E6A /* wordsList.plist */; };
@@ -37,8 +39,8 @@
 		0EF1AE1E183C50CD00ACDEBF /* DICParseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF1AE1C183C50CD00ACDEBF /* DICParseResponse.m */; };
 		0EF1AE21183C513300ACDEBF /* DICRequestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF1AE20183C513300ACDEBF /* DICRequestData.m */; };
 		0EF1AE22183C513300ACDEBF /* DICRequestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF1AE20183C513300ACDEBF /* DICRequestData.m */; };
-		0EF1AE2B183EF78B00ACDEBF /* DICLoadPlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF1AE2A183EF78B00ACDEBF /* DICLoadPlist.m */; };
-		0EF1AE2C183EF78B00ACDEBF /* DICLoadPlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF1AE2A183EF78B00ACDEBF /* DICLoadPlist.m */; };
+		0EF1AE2B183EF78B00ACDEBF /* DICPlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF1AE2A183EF78B00ACDEBF /* DICPlist.m */; };
+		0EF1AE2C183EF78B00ACDEBF /* DICPlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF1AE2A183EF78B00ACDEBF /* DICPlist.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 
 /* Begin PBXFileReference section */
 		0E098EAB185C272000D9963A /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		0E0E5D3718E16B4D0054DE90 /* DICRecentWordsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DICRecentWordsTableViewController.h; path = ../DICRecentWordsTableViewController.h; sourceTree = "<group>"; };
+		0E0E5D3818E16B4D0054DE90 /* DICRecentWordsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DICRecentWordsTableViewController.m; path = ../DICRecentWordsTableViewController.m; sourceTree = "<group>"; };
+		0E0E5D3A18E16E220054DE90 /* DICRecentWords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DICRecentWords.h; sourceTree = "<group>"; };
+		0E0E5D3B18E16E220054DE90 /* DICRecentWords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DICRecentWords.m; sourceTree = "<group>"; };
 		0E1A4B6018401AE2006F3E6A /* testcase.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = testcase.plist; path = dictionaries/testcase.plist; sourceTree = "<group>"; };
 		0E1A4B6318401B0F006F3E6A /* wordsList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = wordsList.plist; path = dictionaries/wordsList.plist; sourceTree = "<group>"; };
 		0E8E98BA18B047720016A3A5 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -85,8 +91,8 @@
 		0EF1AE1C183C50CD00ACDEBF /* DICParseResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DICParseResponse.m; path = Dictionary/DICParseResponse.m; sourceTree = SOURCE_ROOT; };
 		0EF1AE1F183C513300ACDEBF /* DICRequestData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DICRequestData.h; sourceTree = "<group>"; };
 		0EF1AE20183C513300ACDEBF /* DICRequestData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DICRequestData.m; sourceTree = "<group>"; };
-		0EF1AE29183EF78B00ACDEBF /* DICLoadPlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DICLoadPlist.h; sourceTree = "<group>"; };
-		0EF1AE2A183EF78B00ACDEBF /* DICLoadPlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DICLoadPlist.m; sourceTree = "<group>"; };
+		0EF1AE29183EF78B00ACDEBF /* DICPlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DICPlist.h; sourceTree = "<group>"; };
+		0EF1AE2A183EF78B00ACDEBF /* DICPlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DICPlist.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +165,10 @@
 				0EF1ADF5183C4F2100ACDEBF /* Main_iPad.storyboard */,
 				0EF1ADF8183C4F2100ACDEBF /* DICMasterViewController.h */,
 				0EF1ADF9183C4F2100ACDEBF /* DICMasterViewController.m */,
+				0E0E5D3718E16B4D0054DE90 /* DICRecentWordsTableViewController.h */,
+				0E0E5D3818E16B4D0054DE90 /* DICRecentWordsTableViewController.m */,
+				0E0E5D3A18E16E220054DE90 /* DICRecentWords.h */,
+				0E0E5D3B18E16E220054DE90 /* DICRecentWords.m */,
 				0ECADB8A183F1FD700EB2202 /* DICDictionaryToArray.h */,
 				0ECADB8B183F1FD700EB2202 /* DICDictionaryToArray.m */,
 				0EF1ADFB183C4F2100ACDEBF /* DICDetailViewController.h */,
@@ -167,8 +177,8 @@
 				0EF1AE1C183C50CD00ACDEBF /* DICParseResponse.m */,
 				0EF1AE1F183C513300ACDEBF /* DICRequestData.h */,
 				0EF1AE20183C513300ACDEBF /* DICRequestData.m */,
-				0EF1AE29183EF78B00ACDEBF /* DICLoadPlist.h */,
-				0EF1AE2A183EF78B00ACDEBF /* DICLoadPlist.m */,
+				0EF1AE29183EF78B00ACDEBF /* DICPlist.h */,
+				0EF1AE2A183EF78B00ACDEBF /* DICPlist.m */,
 				0EF1ADFE183C4F2100ACDEBF /* Images.xcassets */,
 				0EF1ADE7183C4F2100ACDEBF /* Supporting Files */,
 			);
@@ -331,12 +341,14 @@
 			files = (
 				0EF1ADED183C4F2100ACDEBF /* main.m in Sources */,
 				0ECADB8C183F1FD700EB2202 /* DICDictionaryToArray.m in Sources */,
-				0EF1AE2B183EF78B00ACDEBF /* DICLoadPlist.m in Sources */,
+				0EF1AE2B183EF78B00ACDEBF /* DICPlist.m in Sources */,
 				0EF1ADF1183C4F2100ACDEBF /* DICAppDelegate.m in Sources */,
 				0EF1AE21183C513300ACDEBF /* DICRequestData.m in Sources */,
 				0EF1ADFD183C4F2100ACDEBF /* DICDetailViewController.m in Sources */,
 				0EF1AE1D183C50CD00ACDEBF /* DICParseResponse.m in Sources */,
 				0EF1ADFA183C4F2100ACDEBF /* DICMasterViewController.m in Sources */,
+				0E0E5D3918E16B4D0054DE90 /* DICRecentWordsTableViewController.m in Sources */,
+				0E0E5D3C18E16E220054DE90 /* DICRecentWords.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,7 +358,7 @@
 			files = (
 				0ECADB8D183F1FD700EB2202 /* DICDictionaryToArray.m in Sources */,
 				0EF1AE12183C4F2100ACDEBF /* DictionaryTests.m in Sources */,
-				0EF1AE2C183EF78B00ACDEBF /* DICLoadPlist.m in Sources */,
+				0EF1AE2C183EF78B00ACDEBF /* DICPlist.m in Sources */,
 				0EF1AE1E183C50CD00ACDEBF /* DICParseResponse.m in Sources */,
 				0EF1AE22183C513300ACDEBF /* DICRequestData.m in Sources */,
 			);
@@ -486,6 +498,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dictionary/Dictum-Prefix.pch";
 				INFOPLIST_FILE = "Dictionary/Dictum-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = Dictum;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -506,6 +519,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dictionary/Dictum-Prefix.pch";
 				INFOPLIST_FILE = "Dictionary/Dictum-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = Dictum;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

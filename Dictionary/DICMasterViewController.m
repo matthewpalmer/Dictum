@@ -43,8 +43,8 @@
     // self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
     // $Search
     // Get data from the plist file
-    DICLoadPlist *loader = [[DICLoadPlist alloc]init];
-    NSArray *wordList = [loader loadPlistAtFilename:@"web2.plist"];
+    DICPlist *loader = [[DICPlist alloc]init];
+    NSArray *wordList = [loader loadSystemPlistAtFilename:@"web2.plist"];
     
     // Set up the array
     [self setMasterContent:[NSArray arrayWithArray:wordList]];
@@ -106,9 +106,7 @@
     } else {
         item = [self.masterContent objectAtIndex:indexPath.row];
     }
-    // Possible point for performance improvements
-//    NSLog(@"item is %@", item.allKeys[0]);
-//    cell.detailTextLabel.text = item.allValues[0];
+    
     cell.textLabel.text = item;
     return cell;
 }
@@ -147,24 +145,21 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-    //    UIStoryboardSegue *sg = [[UIStoryboardSegue alloc]initWithIdentifier:@"showDetail"
-    //                                                                  source:self
-    //                                                             destination:self.detailViewController];
-        
-        NSString *selectedWord;
+    NSString *selectedWord;
+
+    if (self.searchResults.count > 0 && self.searchDisplayController.searchBar.text.length > 0) {
+        // The search results array has been created
+        selectedWord = self.searchResults[indexPath.row];
+    } else {
+        selectedWord = self.masterContent[indexPath.row];
+    }
+
+    // Save the selected word to the recent words array
+    DICRecentWords *recentWords = [[DICRecentWords alloc]init];
+    [recentWords addWord:selectedWord];
     
-        if (self.searchResults.count > 0 && self.searchDisplayController.searchBar.text.length > 0) {
-            // The search results array has been created
-//            [self prepareForSegue:sg sender:[self.searchDisplayController.searchResultsTableView cellForRowAtIndexPath:indexPath]];
-            selectedWord = self.searchResults[indexPath.row];
-        } else {
-//            [self prepareForSegue:sg sender:[self.tableView cellForRowAtIndexPath:indexPath]];
-            selectedWord = self.masterContent[indexPath.row];
-        }
-        
-        UIReferenceLibraryViewController *ref = [[UIReferenceLibraryViewController alloc]initWithTerm:selectedWord];
-        [self presentViewController:ref animated:YES completion:nil];
+    UIReferenceLibraryViewController *ref = [[UIReferenceLibraryViewController alloc]initWithTerm:selectedWord];
+    [self presentViewController:ref animated:YES completion:nil];
  
 }
 

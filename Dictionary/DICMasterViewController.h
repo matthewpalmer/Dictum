@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DICRequestData.h"
-#import "DICLoadPlist.h"
+#import "DICRecentWords.h"
 #import "DICDictionaryToArray.h"
 #import "DICDetailViewController.h"
 
