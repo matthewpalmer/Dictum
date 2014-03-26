@@ -20,9 +20,10 @@
             </objects>
             <point key="canvasLocation" x="463" y="64"/>
         </scene>
-        <!--Recent Words Table View Controller - Recent-->
+        <!--Recent Words Table View Controller - Recent Words-->
         <scene sceneID="rvT-DO-2Wn">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="olq-2w-Qp9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="w6V-uY-KCk" customClass="DICRecentWordsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bKH-fA-FIj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -30,7 +31,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recentWordCell" id="h7L-N8-Qw7">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h7L-N8-Qw7" id="6vo-DZ-Lc7">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -43,11 +44,10 @@
                             <outlet property="delegate" destination="w6V-uY-KCk" id="rpp-Zg-uSY"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Recent" id="aE4-Ld-XID"/>
+                    <navigationItem key="navigationItem" title="Recent Words" id="xAK-Op-pqa"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="olq-2w-Qp9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="591" y="851"/>
+            <point key="canvasLocation" x="1117" y="851"/>
         </scene>
         <!--Master View Controller - Master-->
         <scene sceneID="VgW-fR-Quf">
@@ -129,12 +129,31 @@
                     </tabBar>
                     <connections>
                         <segue destination="rS3-R9-Ivy" kind="relationship" relationship="viewControllers" id="UM4-3g-a0h"/>
-                        <segue destination="w6V-uY-KCk" kind="relationship" relationship="viewControllers" id="Jmo-6N-IHr"/>
+                        <segue destination="Tqy-4j-WJe" kind="relationship" relationship="viewControllers" id="Jmo-6N-IHr"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gbV-e7-MoB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-63" y="64"/>
+        </scene>
+        <!--Navigation Controller - Recent-->
+        <scene sceneID="g5S-31-vGy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tqy-4j-WJe" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Recent" id="aE4-Ld-XID"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MRJ-D5-edN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="w6V-uY-KCk" kind="relationship" relationship="rootViewController" id="nQN-3X-Nxu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D0R-9P-UL3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="591" y="851"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

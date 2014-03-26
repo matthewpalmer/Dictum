@@ -28,7 +28,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -78,6 +77,12 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *selectedWord = _recentWords[[indexPath row]];
+    UIReferenceLibraryViewController *ref = [[UIReferenceLibraryViewController alloc]initWithTerm:selectedWord];
+    [self presentViewController:ref animated:YES completion:nil];
+}
 
 
 // Override to support conditional editing of the table view.
