@@ -14,6 +14,14 @@
 		0E1A4B6218401AE2006F3E6A /* testcase.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E1A4B6018401AE2006F3E6A /* testcase.plist */; };
 		0E1A4B6418401B0F006F3E6A /* wordsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E1A4B6318401B0F006F3E6A /* wordsList.plist */; };
 		0E1A4B6518401B0F006F3E6A /* wordsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E1A4B6318401B0F006F3E6A /* wordsList.plist */; };
+		0E6D46C818E4045400893A71 /* recents-active-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E6D46C418E4045400893A71 /* recents-active-1.png */; };
+		0E6D46C918E4045400893A71 /* recents-active-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E6D46C518E4045400893A71 /* recents-active-1@2x.png */; };
+		0E6D46CA18E4045400893A71 /* recents-deactive-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E6D46C618E4045400893A71 /* recents-deactive-1.png */; };
+		0E6D46CB18E4045400893A71 /* recents-deactive-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E6D46C718E4045400893A71 /* recents-deactive-1@2x.png */; };
+		0E6D46CE18E4056200893A71 /* aa.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E6D46CC18E4056200893A71 /* aa.png */; };
+		0E6D46CF18E4056200893A71 /* aa@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E6D46CD18E4056200893A71 /* aa@2x.png */; };
+		0E6D46D218E405D800893A71 /* aa-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E6D46D018E405D800893A71 /* aa-1.png */; };
+		0E6D46D318E405D800893A71 /* aa-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E6D46D118E405D800893A71 /* aa-1@2x.png */; };
 		0E8E98BB18B047720016A3A5 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8E98BA18B047720016A3A5 /* Crashlytics.framework */; };
 		0EC0442C18B0142A00022E8A /* web2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EC0442B18B0142A00022E8A /* web2.plist */; };
 		0EC0442D18B0142A00022E8A /* web2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EC0442B18B0142A00022E8A /* web2.plist */; };
@@ -61,6 +69,14 @@
 		0E0E5D3B18E16E220054DE90 /* DICRecentWords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DICRecentWords.m; sourceTree = "<group>"; };
 		0E1A4B6018401AE2006F3E6A /* testcase.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = testcase.plist; path = dictionaries/testcase.plist; sourceTree = "<group>"; };
 		0E1A4B6318401B0F006F3E6A /* wordsList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = wordsList.plist; path = dictionaries/wordsList.plist; sourceTree = "<group>"; };
+		0E6D46C418E4045400893A71 /* recents-active-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recents-active-1.png"; sourceTree = "<group>"; };
+		0E6D46C518E4045400893A71 /* recents-active-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recents-active-1@2x.png"; sourceTree = "<group>"; };
+		0E6D46C618E4045400893A71 /* recents-deactive-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recents-deactive-1.png"; sourceTree = "<group>"; };
+		0E6D46C718E4045400893A71 /* recents-deactive-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recents-deactive-1@2x.png"; sourceTree = "<group>"; };
+		0E6D46CC18E4056200893A71 /* aa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aa.png; sourceTree = "<group>"; };
+		0E6D46CD18E4056200893A71 /* aa@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aa@2x.png"; sourceTree = "<group>"; };
+		0E6D46D018E405D800893A71 /* aa-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aa-1.png"; sourceTree = "<group>"; };
+		0E6D46D118E405D800893A71 /* aa-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aa-1@2x.png"; sourceTree = "<group>"; };
 		0E8E98BA18B047720016A3A5 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		0EC0442B18B0142A00022E8A /* web2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = web2.plist; path = dictionaries/web2.plist; sourceTree = "<group>"; };
 		0ECADB8A183F1FD700EB2202 /* DICDictionaryToArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DICDictionaryToArray.h; sourceTree = "<group>"; };
@@ -188,6 +204,14 @@
 		0EF1ADE7183C4F2100ACDEBF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0E6D46D018E405D800893A71 /* aa-1.png */,
+				0E6D46D118E405D800893A71 /* aa-1@2x.png */,
+				0E6D46CC18E4056200893A71 /* aa.png */,
+				0E6D46CD18E4056200893A71 /* aa@2x.png */,
+				0E6D46C418E4045400893A71 /* recents-active-1.png */,
+				0E6D46C518E4045400893A71 /* recents-active-1@2x.png */,
+				0E6D46C618E4045400893A71 /* recents-deactive-1.png */,
+				0E6D46C718E4045400893A71 /* recents-deactive-1@2x.png */,
 				0EF1ADE8183C4F2100ACDEBF /* Dictum-Info.plist */,
 				0EF1ADE9183C4F2100ACDEBF /* InfoPlist.strings */,
 				0EF1ADEC183C4F2100ACDEBF /* main.m */,
@@ -297,9 +321,17 @@
 			files = (
 				0EF1ADF7183C4F2100ACDEBF /* Main_iPad.storyboard in Resources */,
 				0EF1ADFF183C4F2100ACDEBF /* Images.xcassets in Resources */,
+				0E6D46C818E4045400893A71 /* recents-active-1.png in Resources */,
+				0E6D46CA18E4045400893A71 /* recents-deactive-1.png in Resources */,
+				0E6D46CF18E4056200893A71 /* aa@2x.png in Resources */,
+				0E6D46D218E405D800893A71 /* aa-1.png in Resources */,
+				0E6D46C918E4045400893A71 /* recents-active-1@2x.png in Resources */,
 				0E1A4B6418401B0F006F3E6A /* wordsList.plist in Resources */,
+				0E6D46D318E405D800893A71 /* aa-1@2x.png in Resources */,
 				0E1A4B6118401AE2006F3E6A /* testcase.plist in Resources */,
+				0E6D46CE18E4056200893A71 /* aa.png in Resources */,
 				0EC0442C18B0142A00022E8A /* web2.plist in Resources */,
+				0E6D46CB18E4045400893A71 /* recents-deactive-1@2x.png in Resources */,
 				0EF1ADF4183C4F2100ACDEBF /* Main_iPhone.storyboard in Resources */,
 				0EF1ADEB183C4F2100ACDEBF /* InfoPlist.strings in Resources */,
 			);

@@ -4,11 +4,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller - Words-->
+        <!--Navigation Controller - Dictionary-->
         <scene sceneID="cUi-kZ-frf">
             <objects>
                 <navigationController id="rS3-R9-Ivy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Words" id="vXK-1r-b9d"/>
+                    <tabBarItem key="tabBarItem" title="Dictionary" image="aa-1.png" id="vXK-1r-b9d"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="yXu-0R-QUA">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -23,7 +23,6 @@
         <!--Recent Words Table View Controller - Recent Words-->
         <scene sceneID="rvT-DO-2Wn">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="olq-2w-Qp9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="w6V-uY-KCk" customClass="DICRecentWordsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bKH-fA-FIj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -46,6 +45,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Recent Words" id="xAK-Op-pqa"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="olq-2w-Qp9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1117" y="851"/>
         </scene>
@@ -140,7 +140,7 @@
         <scene sceneID="g5S-31-vGy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tqy-4j-WJe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Recent" id="aE4-Ld-XID"/>
+                    <tabBarItem key="tabBarItem" title="Recent" image="recents-active-1.png" id="aE4-Ld-XID"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MRJ-D5-edN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -156,6 +156,10 @@
             <point key="canvasLocation" x="591" y="851"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="aa-1.png" width="30" height="30"/>
+        <image name="recents-active-1.png" width="30" height="30"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
